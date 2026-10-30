@@ -10,6 +10,8 @@ import {
   Clock,
   Eye,
   Filter,
+  Lock,
+  LogOut,
   RefreshCw,
   Search,
   ShieldAlert,
@@ -26,13 +28,17 @@ import {
   fetchAllAttempts,
   fetchQuestions,
   fetchServerActiveSessions,
+  verifyAdminPassword,
 } from "@/lib/supabase";
 import { QuestionItem } from "@/lib/default-questions";
 import QuestionContentRenderer from "@/components/QuestionContentRenderer";
 import LatexRenderer from "@/components/LatexRenderer";
 
 export default function KremlinAdminPage() {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [passwordInput, setPasswordInput] = useState<string>("");
+  const [authError, setAuthError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const [attempts, setAttempts] = useState<AttemptRecord[]>([]);
   const [questions, setQuestions] = useState<QuestionItem[]>([]);
@@ -44,8 +50,39 @@ export default function KremlinAdminPage() {
   const [selectedAttempt, setSelectedAttempt] = useState<AttemptRecord | null>(null);
 
   useEffect(() => {
-    loadDashboardData();
+    const authState = sessionStorage.getItem("kremlin_admin_auth");
+    if (authState === "true") {
+      setIsAuthenticated(true);
+      loadDashboardData();
+    }
   }, []);
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setAuthError("");
+    setLoading(true);
+
+    try {
+      const isValid = await verifyAdminPassword(passwordInput);
+      if (isValid) {
+        setIsAuthenticated(true);
+        sessionStorage.setItem("kremlin_admin_auth", "true");
+        await loadDashboardData();
+      } else {
+        setAuthError("Password Kremlin tidak valid. Akses ditolak.");
+      }
+    } catch (e) {
+      setAuthError("Gagal memverifikasi password.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("kremlin_admin_auth");
+    setIsAuthenticated(false);
+    setPasswordInput("");
+  };
 
   const loadDashboardData = async () => {
     setLoading(true);
@@ -91,6 +128,61 @@ export default function KremlinAdminPage() {
 
   const allTopics = Array.from(new Set(questions.map((q) => q.topic)));
 
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center p-4 font-mono">
+        <div className="w-full max-w-md bg-[#12151b] border border-[#222731] p-7 space-y-5">
+          <div className="text-center space-y-2">
+            <div className="w-12 h-12 bg-[#171b22] text-rose-500 border border-rose-500/30 flex items-center justify-center mx-auto">
+              <Lock className="w-5 h-5" />
+            </div>
+            <h1 className="text-lg font-bold text-white tracking-tight">
+              KREMLIN CONTROL ROOM
+            </h1>
+            <p className="text-xs text-slate-400">
+              Akses khusus instruktur dan pengawas Matematika Diskrit.
+            </p>
+          </div>
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            {authError && (
+              <div className="p-2.5 bg-[#1f1113] border border-rose-500/40 text-rose-300 text-xs font-semibold">
+                {authError}
+              </div>
+            )}
+
+            <div className="space-y-1">
+              <label className="block text-xs font-medium text-slate-300">
+                PASSWORD KREMLIN
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
+                  <Lock className="w-3.5 h-3.5" />
+                </div>
+                <input
+                  type="password"
+                  value={passwordInput}
+                  onChange={(e) => setPasswordInput(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full pl-9 pr-3 py-2.5 bg-[#0d0f12] border border-[#252c38] focus:border-rose-500 outline-none text-white text-xs font-mono"
+                  required
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-2.5 px-4 bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer"
+            >
+              {loading ? "MEMVERIFIKASI..." : "MASUK KE DASHBOARD KREMLIN"}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-5 max-w-7xl mx-auto pb-16 font-mono">
       {/* Top Banner */}
@@ -116,6 +208,13 @@ export default function KremlinAdminPage() {
           >
             <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
             <span>Refresh</span>
+          </button>
+          <button
+            onClick={handleLogout}
+            className="px-3 py-1.5 bg-rose-950/40 hover:bg-rose-950/60 text-rose-400 border border-rose-500/30 text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            <span>Logout</span>
           </button>
         </div>
       </div>

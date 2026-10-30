@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   Clock,
   History,
+  Lock,
   LogOut,
   Play,
   RotateCcw,
@@ -24,12 +25,14 @@ import {
   createServerSession,
   getRandomQuizQuestions,
   purgeStudentSessionOnServer,
+  verifyQuizPassword,
 } from "@/lib/supabase";
 import LatexRenderer from "@/components/LatexRenderer";
 
 export default function HomePage() {
   const router = useRouter();
   const [studentName, setStudentName] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -59,7 +62,7 @@ export default function HomePage() {
     }
   }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
 
@@ -68,10 +71,30 @@ export default function HomePage() {
       return;
     }
 
-    const trimmedName = studentName.trim();
-    sessionStorage.setItem("matdis_student_name", trimmedName);
-    localStorage.setItem("matdis_student_name", trimmedName);
-    setIsLoggedIn(true);
+    if (!password.trim()) {
+      setErrorMessage("Silakan masukkan password ujian!");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const valid = await verifyQuizPassword(password);
+      if (!valid) {
+        setErrorMessage("Password ujian salah! Hubungi pengawas/dosen.");
+        setLoading(false);
+        return;
+      }
+
+      const trimmedName = studentName.trim();
+      sessionStorage.setItem("matdis_student_name", trimmedName);
+      localStorage.setItem("matdis_student_name", trimmedName);
+      setIsLoggedIn(true);
+      setLoading(false);
+    } catch (err: any) {
+      setErrorMessage("Terjadi kendala saat verifikasi. Silakan coba lagi.");
+      setLoading(false);
+    }
   };
 
   const handleStartExam = async () => {
@@ -106,6 +129,7 @@ export default function HomePage() {
 
       setIsLoggedIn(false);
       setStudentName("");
+      setPassword("");
       setRecentAttempt(null);
       setShowExitModal(false);
     } catch (e) {
@@ -339,16 +363,16 @@ export default function HomePage() {
               </div>
             </div>
           ) : (
-            /* ================= INITIAL LOGIN FORM (NAME ONLY, NO PASSWORD) ================= */
+            /* ================= INITIAL LOGIN FORM (NAME + SECURE PASSWORD) ================= */
             <div className="bg-[#12151b] border border-[#222731] p-6 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#222731]">
                 <div>
                   <h2 className="text-sm font-bold text-white flex items-center gap-2">
                     <Terminal className="w-4 h-4 text-orange-400" />
-                    Identitas Peserta CBT
+                    Autentikasi Sesi CBT
                   </h2>
                   <p className="text-xs text-slate-400 mt-0.5">
-                    Tulis nama Anda untuk memulai sesi latihan tryout.
+                    Masukkan identitas dan password ujian untuk memulai evaluasi.
                   </p>
                 </div>
               </div>
@@ -369,10 +393,29 @@ export default function HomePage() {
                     type="text"
                     value={studentName}
                     onChange={(e) => setStudentName(e.target.value)}
-                    placeholder="Masukkan nama Anda..."
-                    className="w-full px-3 py-2.5 bg-[#0d0f12] border border-[#252c38] focus:border-orange-500 text-white placeholder:text-slate-500 text-xs font-medium outline-none transition"
+                    placeholder="Nama mahasiswa..."
+                    className="w-full px-3 py-2 bg-[#0d0f12] border border-[#252c38] focus:border-orange-500 text-white placeholder:text-slate-600 text-xs font-medium outline-none transition"
                     required
                   />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="block text-xs font-medium text-slate-300">
+                    PASSWORD UJIAN
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
+                      <Lock className="w-3.5 h-3.5" />
+                    </div>
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="••••••••"
+                      className="w-full pl-9 pr-3 py-2 bg-[#0d0f12] border border-[#252c38] focus:border-orange-500 text-white placeholder:text-slate-600 text-xs outline-none transition"
+                      required
+                    />
+                  </div>
                 </div>
 
                 <button
@@ -380,8 +423,14 @@ export default function HomePage() {
                   disabled={loading}
                   className="w-full py-2.5 px-4 bg-orange-600 hover:bg-orange-500 active:bg-orange-700 text-black font-bold text-xs flex items-center justify-center gap-2 transition disabled:opacity-50 cursor-pointer"
                 >
-                  <span>MASUK KE SISTEM CBT</span>
-                  <ArrowRight className="w-4 h-4" />
+                  {loading ? (
+                    <span>MEMVERIFIKASI...</span>
+                  ) : (
+                    <>
+                      <span>MASUK KE SISTEM CBT</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
