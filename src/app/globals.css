@@ -1,0 +1,114 @@
+@import "katex/dist/katex.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0d0f12;
+  --foreground: #e6edf3;
+}
+
+/* Strict No Border Radius across all elements */
+* {
+  border-radius: 0px !important;
+}
+
+body {
+  color: var(--foreground);
+  background: #0d0f12;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  min-height: 100vh;
+}
+
+/* Enforce Helvetica globally across UI components */
+body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Protect KaTeX internal mathematical fonts and Private Use Area (PUA) symbol glyphs */
+.katex,
+.katex .katex-html,
+.katex .base,
+.katex .mrel,
+.katex .mord,
+.katex .inner,
+.katex .thinbox,
+.katex .rlap,
+.katex .vbox,
+.katex * {
+  font-family: KaTeX_Main, "Times New Roman", serif !important;
+}
+
+.katex .mathnormal {
+  font-family: KaTeX_Math, "Times New Roman", serif !important;
+  font-style: italic !important;
+}
+
+.katex .amsrm {
+  font-family: KaTeX_AMS, serif !important;
+}
+
+.katex .mathbf {
+  font-family: KaTeX_Main, serif !important;
+  font-weight: bold !important;
+}
+
+.katex .mathrm {
+  font-family: KaTeX_Main, serif !important;
+  font-style: normal !important;
+}
+
+.katex .mathit {
+  font-family: KaTeX_Main, serif !important;
+  font-style: italic !important;
+}
+
+/* Custom flat scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111419;
+}
+::-webkit-scrollbar-thumb {
+  background: #232832;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333a48;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(249, 115, 22, 0.4);
+  color: #ffffff;
+}
+
+/* KaTeX tweaks for crisp math rendering on Dark Theme */
+.katex {
+  font-size: 1.05em;
+  text-rendering: optimizeLegibility;
+  color: inherit !important;
+}
+
+/* Hide duplicate MathML */
+.katex-mathml {
+  display: none !important;
+}
+
+.katex-html {
+  display: inline-block;
+  color: #f1f5f9;
+}
+
+.katex-display {
+  margin: 0.85em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.35rem 0;
+}
