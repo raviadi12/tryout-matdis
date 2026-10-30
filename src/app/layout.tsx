@@ -85,7 +85,7 @@ export default function RootLayout({
               <span>Matematika Diskrit CBT &bull; LaTeX &amp; Digraf Graph Engine</span>
             </div>
             <div className="flex items-center gap-3 text-slate-400 text-[11px]">
-              <span>67 Bank Soal</span>
+              <span>100+ Bank Soal</span>
               <span>&bull;</span>
               <span>20 Soal / Sesi</span>
             </div>

@@ -154,7 +154,7 @@ export default function HomePage() {
         </div>
 
         <div className="flex items-center gap-3 text-xs text-slate-400">
-          <span>67 Bank Soal</span>
+          <span>100+ Bank Soal</span>
           <span>&bull;</span>
           <span>20 Soal / Sesi</span>
         </div>

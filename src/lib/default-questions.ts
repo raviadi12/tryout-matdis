@@ -16,153 +16,33 @@ export interface QuestionItem {
 
 export const DEFAULT_QUESTIONS: QuestionItem[] = [
   {
-    "id": "245c6230-33e4-4acd-b3d5-85be03a62f33",
-    "topic": "Relasi Rekurensi",
-    "question": "Suku ke-$n$ barisan Fibonacci didefinisikan dengan $F_0 = 0, F_1 = 1$ dan $F_n = F_{n-1} + F_{n-2}$ untuk $n \\ge 2$. Nilai dari $F_7$ adalah:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$8$"
-      },
-      {
-        "key": "B",
-        "text": "$13$"
-      },
-      {
-        "key": "C",
-        "text": "$21$"
-      },
-      {
-        "key": "D",
-        "text": "$34$"
-      },
-      {
-        "key": "E",
-        "text": "$55$"
-      }
-    ],
-    "correct_answer": "B",
-    "explanation": "Mari hitung suku-suku barisan:\\n$F_0 = 0$\\n$F_1 = 1$\\n$F_2 = 0 + 1 = 1$\\n$F_3 = 1 + 1 = 2$\\n$F_4 = 1 + 2 = 3$\\n$F_5 = 2 + 3 = 5$\\n$F_6 = 3 + 5 = 8$\\n$F_7 = 5 + 8 = 13$.",
-    "created_at": "2026-10-30T04:48:51.469194+00:00"
-  },
-  {
-    "id": "a2c7e270-f789-4afc-8824-d956b24c735e",
+    "id": "68ce86db-1147-4bc9-aa29-e465d921b6c0",
     "topic": "Relasi Bagian 1",
-    "question": "Diketahui himpunan $A = \\{1, 2, 3\\}$ dan $B = \\{a, b\\}$. Berapakah banyaknya relasi biner yang mungkin dibentuk dari himpunan $A$ ke himpunan $B$?",
+    "question": "Misalkan $|A| = n$. Berapakah banyaknya relasi pada himpunan $A$ yang bersifat **refleksif**?",
     "options": [
       {
         "key": "A",
-        "text": "$6$"
+        "text": "$2^{n}$"
       },
       {
         "key": "B",
-        "text": "$36$"
+        "text": "$2^{n(n-1)}$"
       },
       {
         "key": "C",
-        "text": "$64$"
+        "text": "$2^{n^2 - n}$"
       },
       {
         "key": "D",
-        "text": "$128$"
+        "text": "$2^{\\frac{n(n+1)}{2}}$"
       },
       {
         "key": "E",
-        "text": "$256$"
+        "text": "$2^{n^2} - 2^n$"
       }
     ],
     "correct_answer": "C",
-    "explanation": "Produk kartesius $A \\times B$ memiliki kardinalitas $|A \\times B| = |A| \\times |B| = 3 \\times 2 = 6$. Suatu relasi dari $A$ ke $B$ adalah subset dari $A \\times B$. Banyaknya subset dari himpunan dengan $n$ elemen adalah $2^n$. Maka banyaknya relasi yang mungkin adalah $2^{|A \\times B|} = 2^6 = 64$.",
-    "created_at": "2026-10-30T04:48:50.137931+00:00"
-  },
-  {
-    "id": "c652c8b3-a7a7-46ec-b208-6f089f2d24b7",
-    "topic": "Relasi Bagian 1",
-    "question": "Diberikan himpunan $A = \\{1, 2, 3, 4\\}$. Relasi $R$ pada himpunan $A$ didefinisikan sebagai $R = \\{(1,1), (2,2), (3,3), (4,4), (1,2), (2,1), (2,3)\\}$. Agar relasi $R$ bersifat transitif, pasangan terurut manakah yang wajib ditambahkan ke dalam $R$?",
-    "options": [
-      {
-        "key": "A",
-        "text": "$(3,2)$ saja"
-      },
-      {
-        "key": "B",
-        "text": "$(1,3)$ saja"
-      },
-      {
-        "key": "C",
-        "text": "$(3,1)$ saja"
-      },
-      {
-        "key": "D",
-        "text": "$(1,3)$ dan $(3,2)$"
-      },
-      {
-        "key": "E",
-        "text": "$(3,1)$ dan $(1,3)$"
-      }
-    ],
-    "correct_answer": "B",
-    "explanation": "Sifat transitif mengharuskan: jika $(a, b) \\in R$ dan $(b, c) \\in R$, maka $(a, c) \\in R$. Pada relasi di atas, terdapat $(1, 2) \\in R$ dan $(2, 3) \\in R$, namun $(1, 3) \\notin R$. Oleh karena itu, pasangan $(1, 3)$ wajib ditambahkan agar sifat transitif terpenuhi.",
-    "created_at": "2026-10-30T04:48:50.137931+00:00"
-  },
-  {
-    "id": "3928d39f-ce17-466f-8c8a-071cb8692c8d",
-    "topic": "Relasi Bagian 1",
-    "question": "Sebuah relasi $R$ pada himpunan $A$ disebut bersifat **antisimetris (tolak-simetris)** jika memenuhi kondisi:",
-    "options": [
-      {
-        "key": "A",
-        "text": "Jika $(a, b) \\in R$ maka $(b, a) \\notin R$ untuk semua $a, b \\in A$"
-      },
-      {
-        "key": "B",
-        "text": "Jika $(a, b) \\in R$ dan $(b, a) \\in R$ maka haruslah $a = b$"
-      },
-      {
-        "key": "C",
-        "text": "Untuk setiap $a \\in A$, $(a, a) \\notin R$"
-      },
-      {
-        "key": "D",
-        "text": "Jika $(a, b) \\in R$ dan $(b, c) \\in R$ maka $(a, c) \\in R$"
-      },
-      {
-        "key": "E",
-        "text": "Jika $(a, b) \\in R$ maka $(b, a) \\in R$"
-      }
-    ],
-    "correct_answer": "B",
-    "explanation": "Berdasarkan definisi matematis: Relasi $R$ pada himpunan $A$ disebut antisimetris jika untuk setiap $a, b \\in A$, kondisi $(a, b) \\in R \\land (b, a) \\in R \\implies a = b$. Dengan kata lain, tidak boleh ada dua elemen berbeda $a \\ne b$ sedemikian rupa sehingga keduanya saling berelasi bolak-balik.",
-    "created_at": "2026-10-30T04:48:50.137931+00:00"
-  },
-  {
-    "id": "7bf3adb5-4ed1-406e-aa85-71deba480505",
-    "topic": "Relasi Bagian 1",
-    "question": "Diberikan relasi $R$ pada himpunan bilangan bulat positif $\\mathbb{Z}^+$ dengan aturan $(a, b) \\in R \\iff a \\mid b$ ($a$ membagi habis $b$). Sifat-sifat manakah yang dimiliki oleh relasi $R$?",
-    "options": [
-      {
-        "key": "A",
-        "text": "Refleksif, simetris, dan transitif"
-      },
-      {
-        "key": "B",
-        "text": "Refleksif, antisimetris, dan tidak transitif"
-      },
-      {
-        "key": "C",
-        "text": "Refleksif, antisimetris, dan transitif"
-      },
-      {
-        "key": "D",
-        "text": "Irefleksif, simetris, dan transitif"
-      },
-      {
-        "key": "E",
-        "text": "Irefleksif, antisimetris, dan transitif"
-      }
-    ],
-    "correct_answer": "C",
-    "explanation": "Mari uji ketiga sifat:\\n1. **Refleksif**: Untuk setiap $a \\in \\mathbb{Z}^+$, $a \\mid a$ bernilai benar karena $a = 1 \\cdot a$. (Refleksif)\\n2. **Antisimetris**: Jika $a \\mid b$ dan $b \\mid a$ pada bilangan bulat positif, maka haruslah $a = b$. (Antisimetris)\\n3. **Transitif**: Jika $a \\mid b$ dan $b \\mid c$, maka $b = k_1 a$ dan $c = k_2 b$, sehingga $c = (k_1 k_2) a$, yang berarti $a \\mid c$. (Transitif)\\nMaka $R$ bersifat refleksif, antisimetris, dan transitif (merupakan POSET).",
+    "explanation": "Matriks relasi pada himpunan berukuran $n$ memiliki $n^2$ elemen. Sifat refleksif mewajibkan seluruh $n$ elemen pada diagonal utama bernilai 1 (hanya 1 pilihan untuk masing-masing). Sisa elemen di luar diagonal utama adalah $n^2 - n$ buah, dan masing-masing dapat bernilai 0 atau 1 (2 pilihan). Sehingga total relasi refleksif adalah $2^{n^2 - n} = 2^{n(n-1)}$.",
     "created_at": "2026-10-30T04:48:50.137931+00:00"
   },
   {
@@ -196,123 +76,123 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:50.137931+00:00"
   },
   {
-    "id": "68ce86db-1147-4bc9-aa29-e465d921b6c0",
+    "id": "7bf3adb5-4ed1-406e-aa85-71deba480505",
     "topic": "Relasi Bagian 1",
-    "question": "Misalkan $|A| = n$. Berapakah banyaknya relasi pada himpunan $A$ yang bersifat **refleksif**?",
+    "question": "Diberikan relasi $R$ pada himpunan bilangan bulat positif $\\mathbb{Z}^+$ dengan aturan $(a, b) \\in R \\iff a \\mid b$ ($a$ membagi habis $b$). Sifat-sifat manakah yang dimiliki oleh relasi $R$?",
     "options": [
       {
         "key": "A",
-        "text": "$2^{n}$"
+        "text": "Refleksif, simetris, dan transitif"
       },
       {
         "key": "B",
-        "text": "$2^{n(n-1)}$"
+        "text": "Refleksif, antisimetris, dan tidak transitif"
       },
       {
         "key": "C",
-        "text": "$2^{n^2 - n}$"
+        "text": "Refleksif, antisimetris, dan transitif"
       },
       {
         "key": "D",
-        "text": "$2^{\\frac{n(n+1)}{2}}$"
+        "text": "Irefleksif, simetris, dan transitif"
       },
       {
         "key": "E",
-        "text": "$2^{n^2} - 2^n$"
+        "text": "Irefleksif, antisimetris, dan transitif"
       }
     ],
     "correct_answer": "C",
-    "explanation": "Matriks relasi pada himpunan berukuran $n$ memiliki $n^2$ elemen. Sifat refleksif mewajibkan seluruh $n$ elemen pada diagonal utama bernilai 1 (hanya 1 pilihan untuk masing-masing). Sisa elemen di luar diagonal utama adalah $n^2 - n$ buah, dan masing-masing dapat bernilai 0 atau 1 (2 pilihan). Sehingga total relasi refleksif adalah $2^{n^2 - n} = 2^{n(n-1)}$.",
+    "explanation": "Mari uji ketiga sifat:\\n1. **Refleksif**: Untuk setiap $a \\in \\mathbb{Z}^+$, $a \\mid a$ bernilai benar karena $a = 1 \\cdot a$. (Refleksif)\\n2. **Antisimetris**: Jika $a \\mid b$ dan $b \\mid a$ pada bilangan bulat positif, maka haruslah $a = b$. (Antisimetris)\\n3. **Transitif**: Jika $a \\mid b$ dan $b \\mid c$, maka $b = k_1 a$ dan $c = k_2 b$, sehingga $c = (k_1 k_2) a$, yang berarti $a \\mid c$. (Transitif)\\nMaka $R$ bersifat refleksif, antisimetris, dan transitif (merupakan POSET).",
     "created_at": "2026-10-30T04:48:50.137931+00:00"
   },
   {
-    "id": "3e672e96-d51e-44b2-8b4c-241bf7e5e4bf",
+    "id": "3928d39f-ce17-466f-8c8a-071cb8692c8d",
     "topic": "Relasi Bagian 1",
-    "question": "Manakah di antara relasi-relasi berikut pada himpunan bilangan bulat $\\mathbb{Z}$ yang bersifat **irefleksif**?",
+    "question": "Sebuah relasi $R$ pada himpunan $A$ disebut bersifat **antisimetris (tolak-simetris)** jika memenuhi kondisi:",
     "options": [
       {
         "key": "A",
-        "text": "$R_1 = \\{(x, y) \\mid x \\le y\\}$"
+        "text": "Jika $(a, b) \\in R$ maka $(b, a) \\notin R$ untuk semua $a, b \\in A$"
       },
       {
         "key": "B",
-        "text": "$R_2 = \\{(x, y) \\mid x + y = 0\\}$"
+        "text": "Jika $(a, b) \\in R$ dan $(b, a) \\in R$ maka haruslah $a = b$"
       },
       {
         "key": "C",
-        "text": "$R_3 = \\{(x, y) \\mid x < y\\}$"
+        "text": "Untuk setiap $a \\in A$, $(a, a) \\notin R$"
       },
       {
         "key": "D",
-        "text": "$R_4 = \\{(x, y) \\mid x = y \\lor x = -y\\}$"
+        "text": "Jika $(a, b) \\in R$ dan $(b, c) \\in R$ maka $(a, c) \\in R$"
       },
       {
         "key": "E",
-        "text": "$R_5 = \\{(x, y) \\mid xy > 0\\}$"
-      }
-    ],
-    "correct_answer": "C",
-    "explanation": "Relasi $R$ bersifat irefleksif jika untuk SETIAP $x \\in \\mathbb{Z}$, $(x, x) \\notin R$. Pada $R_3 = \\{(x,y) \\mid x < y\\}$, tidak pernah ada bilangan bulat $x$ yang memenuhi $x < x$. Jadi $(x, x) \\notin R_3$ untuk semua $x$, sehingga $R_3$ bersifat irefleksif.",
-    "created_at": "2026-10-30T04:48:50.137931+00:00"
-  },
-  {
-    "id": "4788f6a8-5c04-447c-8806-ee8026955318",
-    "topic": "Relasi Bagian 1",
-    "question": "Graf berarah (digraf) dari suatu relasi $R$ pada himpunan $A$ tidak memuat satu pun *self-loop* (gelang pada simpul) dan setiap ada busur dari simpul $u$ ke $v$ ($u \\ne v$), tidak pernah ada busur kembali dari $v$ ke $u$. Relasi tersebut bersifat:",
-    "options": [
-      {
-        "key": "A",
-        "text": "Refleksif dan Simetris"
-      },
-      {
-        "key": "B",
-        "text": "Irefleksif dan Asimetris"
-      },
-      {
-        "key": "C",
-        "text": "Refleksif dan Antisimetris"
-      },
-      {
-        "key": "D",
-        "text": "Transitif dan Simetris"
-      },
-      {
-        "key": "E",
-        "text": "Simetris dan Ekuivalen"
+        "text": "Jika $(a, b) \\in R$ maka $(b, a) \\in R$"
       }
     ],
     "correct_answer": "B",
-    "explanation": "Tidak adanya *self-loop* berarti $(a, a) \\notin R$ untuk semua $a$ (irefleksif). Tidak adanya busur dua arah antara simpul berbeda berarti jika $(a, b) \\in R$ maka $(b, a) \\notin R$. Kombinasi irefleksif dan jika $(a,b) \\in R \\implies (b,a) \\notin R$ merupakan definisi dari relasi **asimetris**.",
+    "explanation": "Berdasarkan definisi matematis: Relasi $R$ pada himpunan $A$ disebut antisimetris jika untuk setiap $a, b \\in A$, kondisi $(a, b) \\in R \\land (b, a) \\in R \\implies a = b$. Dengan kata lain, tidak boleh ada dua elemen berbeda $a \\ne b$ sedemikian rupa sehingga keduanya saling berelasi bolak-balik.",
     "created_at": "2026-10-30T04:48:50.137931+00:00"
   },
   {
-    "id": "3e39fc1a-7fd6-4e88-be33-e59c274413d2",
-    "topic": "Relasi Bagian 2",
-    "question": "Diberikan relasi $R = \\{(1, 2), (2, 3), (3, 1)\\}$ dan $S = \\{(2, 1), (3, 2), (1, 3)\\}$ pada himpunan $A = \\{1, 2, 3\\}$. Komposisi relasi $S \\circ R$ adalah:",
+    "id": "c652c8b3-a7a7-46ec-b208-6f089f2d24b7",
+    "topic": "Relasi Bagian 1",
+    "question": "Diberikan himpunan $A = \\{1, 2, 3, 4\\}$. Relasi $R$ pada himpunan $A$ didefinisikan sebagai $R = \\{(1,1), (2,2), (3,3), (4,4), (1,2), (2,1), (2,3)\\}$. Agar relasi $R$ bersifat transitif, pasangan terurut manakah yang wajib ditambahkan ke dalam $R$?",
     "options": [
       {
         "key": "A",
-        "text": "$\\{(1, 1), (2, 2), (3, 3)\\}$"
+        "text": "$(3,2)$ saja"
       },
       {
         "key": "B",
-        "text": "$\\{(1, 2), (2, 3), (3, 1)\\}$"
+        "text": "$(1,3)$ saja"
       },
       {
         "key": "C",
-        "text": "$\\{(2, 2), (3, 3), (1, 1)\\}$"
+        "text": "$(3,1)$ saja"
       },
       {
         "key": "D",
-        "text": "$\\{(1, 3), (2, 1), (3, 2)\\}$"
+        "text": "$(1,3)$ dan $(3,2)$"
       },
       {
         "key": "E",
-        "text": "$\\{(3, 1), (1, 2), (2, 3)\\}$"
+        "text": "$(3,1)$ dan $(1,3)$"
       }
     ],
-    "correct_answer": "A",
-    "explanation": "Komposisi $S \\circ R$ didefinisikan sebagai: $(a, c) \\in S \\circ R \\iff \\exists b$ sedemikian rupa sehingga $(a, b) \\in R$ dan $(b, c) \\in S$.\\n1. Untuk $(1, 2) \\in R$: cari pasangan di $S$ yang berawal dari $2$, yaitu $(2, 1) \\in S \\implies (1, 1)$.\\n2. Untuk $(2, 3) \\in R$: cari di $S$ berawal dari $3$, yaitu $(3, 2) \\in S \\implies (2, 2)$.\\n3. Untuk $(3, 1) \\in R$: cari di $S$ berawal dari $1$, yaitu $(1, 3) \\in S \\implies (3, 3)$.\\nJadi $S \\circ R = \\{(1, 1), (2, 2), (3, 3)\\}$.",
+    "correct_answer": "B",
+    "explanation": "Sifat transitif mengharuskan: jika $(a, b) \\in R$ dan $(b, c) \\in R$, maka $(a, c) \\in R$. Pada relasi di atas, terdapat $(1, 2) \\in R$ dan $(2, 3) \\in R$, namun $(1, 3) \\notin R$. Oleh karena itu, pasangan $(1, 3)$ wajib ditambahkan agar sifat transitif terpenuhi.",
+    "created_at": "2026-10-30T04:48:50.137931+00:00"
+  },
+  {
+    "id": "a2c7e270-f789-4afc-8824-d956b24c735e",
+    "topic": "Relasi Bagian 1",
+    "question": "Diketahui himpunan $A = \\{1, 2, 3\\}$ dan $B = \\{a, b\\}$. Berapakah banyaknya relasi biner yang mungkin dibentuk dari himpunan $A$ ke himpunan $B$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$6$"
+      },
+      {
+        "key": "B",
+        "text": "$36$"
+      },
+      {
+        "key": "C",
+        "text": "$64$"
+      },
+      {
+        "key": "D",
+        "text": "$128$"
+      },
+      {
+        "key": "E",
+        "text": "$256$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Produk kartesius $A \\times B$ memiliki kardinalitas $|A \\times B| = |A| \\times |B| = 3 \\times 2 = 6$. Suatu relasi dari $A$ ke $B$ adalah subset dari $A \\times B$. Banyaknya subset dari himpunan dengan $n$ elemen adalah $2^n$. Maka banyaknya relasi yang mungkin adalah $2^{|A \\times B|} = 2^6 = 64$.",
     "created_at": "2026-10-30T04:48:50.137931+00:00"
   },
   {
@@ -346,123 +226,123 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:50.137931+00:00"
   },
   {
-    "id": "a2a0c286-204e-454a-93ec-b878dd07f730",
+    "id": "3e39fc1a-7fd6-4e88-be33-e59c274413d2",
     "topic": "Relasi Bagian 2",
-    "question": "Diberikan relasi $R = \\{(1, 2), (2, 3), (3, 4)\\}$ pada himpunan $A = \\{1, 2, 3, 4\\}$. Berapakah banyaknya pasangan terurut pada **penutupan transitif (transitive closure)** dari $R$, yaitu $R^+$?",
+    "question": "Diberikan relasi $R = \\{(1, 2), (2, 3), (3, 1)\\}$ dan $S = \\{(2, 1), (3, 2), (1, 3)\\}$ pada himpunan $A = \\{1, 2, 3\\}$. Komposisi relasi $S \\circ R$ adalah:",
     "options": [
       {
         "key": "A",
-        "text": "$3$"
+        "text": "$\\{(1, 1), (2, 2), (3, 3)\\}$"
       },
       {
         "key": "B",
-        "text": "$5$"
+        "text": "$\\{(1, 2), (2, 3), (3, 1)\\}$"
       },
       {
         "key": "C",
-        "text": "$6$"
+        "text": "$\\{(2, 2), (3, 3), (1, 1)\\}$"
       },
       {
         "key": "D",
-        "text": "$8$"
+        "text": "$\\{(1, 3), (2, 1), (3, 2)\\}$"
       },
       {
         "key": "E",
-        "text": "$10$"
+        "text": "$\\{(3, 1), (1, 2), (2, 3)\\}$"
       }
     ],
-    "correct_answer": "C",
-    "explanation": "Penutupan transitif $R^+$ memuat seluruh rantai keterhubungan:\\n- Panjang 1 ($R$): $(1, 2), (2, 3), (3, 4)$ (3 pasangan)\\n- Panjang 2 ($R^2$): $(1, 3)$ dari $1 \\to 2 \\to 3$, dan $(2, 4)$ dari $2 \\to 3 \\to 4$ (2 pasangan)\\n- Panjang 3 ($R^3$): $(1, 4)$ dari $1 \\to 2 \\to 3 \\to 4$ (1 pasangan)\\nTotal pasangan pada $R^+ = \\{(1,2), (2,3), (3,4), (1,3), (2,4), (1,4)\\}$, yaitu ada $3 + 2 + 1 = 6$ pasangan.",
-    "created_at": "2026-10-30T04:48:50.764264+00:00"
+    "correct_answer": "A",
+    "explanation": "Komposisi $S \\circ R$ didefinisikan sebagai: $(a, c) \\in S \\circ R \\iff \\exists b$ sedemikian rupa sehingga $(a, b) \\in R$ dan $(b, c) \\in S$.\\n1. Untuk $(1, 2) \\in R$: cari pasangan di $S$ yang berawal dari $2$, yaitu $(2, 1) \\in S \\implies (1, 1)$.\\n2. Untuk $(2, 3) \\in R$: cari di $S$ berawal dari $3$, yaitu $(3, 2) \\in S \\implies (2, 2)$.\\n3. Untuk $(3, 1) \\in R$: cari di $S$ berawal dari $1$, yaitu $(1, 3) \\in S \\implies (3, 3)$.\\nJadi $S \\circ R = \\{(1, 1), (2, 2), (3, 3)\\}$.",
+    "created_at": "2026-10-30T04:48:50.137931+00:00"
   },
   {
-    "id": "61fe9cd9-6a0b-4bf4-8c7a-ce8bd8ba2ce5",
-    "topic": "Relasi Bagian 2",
-    "question": "Algoritma yang efisien dan sering digunakan untuk menghitung penutupan transitif (*transitive closure*) dari suatu relasi pada himpunan berhingga dengan kompleksitas waktu $O(n^3)$ adalah:",
+    "id": "4788f6a8-5c04-447c-8806-ee8026955318",
+    "topic": "Relasi Bagian 1",
+    "question": "Graf berarah (digraf) dari suatu relasi $R$ pada himpunan $A$ tidak memuat satu pun *self-loop* (gelang pada simpul) dan setiap ada busur dari simpul $u$ ke $v$ ($u \\ne v$), tidak pernah ada busur kembali dari $v$ ke $u$. Relasi tersebut bersifat:",
     "options": [
       {
         "key": "A",
-        "text": "Algoritma Dijkstra"
+        "text": "Refleksif dan Simetris"
       },
       {
         "key": "B",
-        "text": "Algoritma Kruskal"
+        "text": "Irefleksif dan Asimetris"
       },
       {
         "key": "C",
-        "text": "Algoritma Prim"
+        "text": "Refleksif dan Antisimetris"
       },
       {
         "key": "D",
-        "text": "Algoritma Warshall"
+        "text": "Transitif dan Simetris"
       },
       {
         "key": "E",
-        "text": "Algoritma Floyd-Steinberg"
-      }
-    ],
-    "correct_answer": "D",
-    "explanation": "Algoritma Warshall adalah algoritma klasik dalam teori graf dan relasi biner yang menggunakan matriks biner nol-satu bertahap $W^{[0]}, W^{[1]}, \\dots, W^{[n]}$ untuk mencari *transitive closure* relasi dengan kompleksitas $O(n^3)$.",
-    "created_at": "2026-10-30T04:48:50.764264+00:00"
-  },
-  {
-    "id": "314e3670-dd86-4feb-a31c-1cee05a7b150",
-    "topic": "Relasi Bagian 2",
-    "question": "Suatu relasi $R$ pada himpunan bilangan bulat $\\mathbb{Z}$ didefinisikan sebagai $a \\, R \\, b \\iff a \\equiv b \\pmod{5}$. Kelas ekuivalensi $[12]$ sama dengan himpunan:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$[0]$"
-      },
-      {
-        "key": "B",
-        "text": "$[1]$"
-      },
-      {
-        "key": "C",
-        "text": "$[2]$"
-      },
-      {
-        "key": "D",
-        "text": "$[3]$"
-      },
-      {
-        "key": "E",
-        "text": "$[4]$"
-      }
-    ],
-    "correct_answer": "C",
-    "explanation": "Kelas ekuivalensi $[a]$ terdiri dari semua bilangan $x \\in \\mathbb{Z}$ sedemikian rupa sehingga $x \\equiv a \\pmod 5$. Karena $12 = 2 \\times 5 + 2$, maka $12 \\equiv 2 \\pmod 5$. Oleh karena itu, $[12] = [2] = \\{\\dots, -8, -3, 2, 7, 12, 17, \\dots\\}$.",
-    "created_at": "2026-10-30T04:48:50.764264+00:00"
-  },
-  {
-    "id": "fb8c97d4-e2b4-4676-8f19-416f92006351",
-    "topic": "Relasi Bagian 2",
-    "question": "Sebuah himpunan terurut parsial (POSET) dinotasikan dengan $(S, \\preceq)$. Syarat relasi $\\preceq$ agar membentuk POSET adalah:",
-    "options": [
-      {
-        "key": "A",
-        "text": "Refleksif, Simetris, dan Transitif"
-      },
-      {
-        "key": "B",
-        "text": "Refleksif, Antisimetris, dan Transitif"
-      },
-      {
-        "key": "C",
-        "text": "Irefleksif, Antisimetris, dan Transitif"
-      },
-      {
-        "key": "D",
-        "text": "Refleksif, Asimetris, dan Transitif"
-      },
-      {
-        "key": "E",
-        "text": "Simetris, Antisimetris, dan Transitif"
+        "text": "Simetris dan Ekuivalen"
       }
     ],
     "correct_answer": "B",
-    "explanation": "POSET (*Partially Ordered Set*) didefinisikan secara baku sebagai pasangan $(S, \\preceq)$ di mana relasi $\\preceq$ memenuhi tiga sifat: Refleksif, Antisimetris (tolak-simetris), dan Transitif.",
+    "explanation": "Tidak adanya *self-loop* berarti $(a, a) \\notin R$ untuk semua $a$ (irefleksif). Tidak adanya busur dua arah antara simpul berbeda berarti jika $(a, b) \\in R$ maka $(b, a) \\notin R$. Kombinasi irefleksif dan jika $(a,b) \\in R \\implies (b,a) \\notin R$ merupakan definisi dari relasi **asimetris**.",
+    "created_at": "2026-10-30T04:48:50.137931+00:00"
+  },
+  {
+    "id": "3e672e96-d51e-44b2-8b4c-241bf7e5e4bf",
+    "topic": "Relasi Bagian 1",
+    "question": "Manakah di antara relasi-relasi berikut pada himpunan bilangan bulat $\\mathbb{Z}$ yang bersifat **irefleksif**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$R_1 = \\{(x, y) \\mid x \\le y\\}$"
+      },
+      {
+        "key": "B",
+        "text": "$R_2 = \\{(x, y) \\mid x + y = 0\\}$"
+      },
+      {
+        "key": "C",
+        "text": "$R_3 = \\{(x, y) \\mid x < y\\}$"
+      },
+      {
+        "key": "D",
+        "text": "$R_4 = \\{(x, y) \\mid x = y \\lor x = -y\\}$"
+      },
+      {
+        "key": "E",
+        "text": "$R_5 = \\{(x, y) \\mid xy > 0\\}$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Relasi $R$ bersifat irefleksif jika untuk SETIAP $x \\in \\mathbb{Z}$, $(x, x) \\notin R$. Pada $R_3 = \\{(x,y) \\mid x < y\\}$, tidak pernah ada bilangan bulat $x$ yang memenuhi $x < x$. Jadi $(x, x) \\notin R_3$ untuk semua $x$, sehingga $R_3$ bersifat irefleksif.",
+    "created_at": "2026-10-30T04:48:50.137931+00:00"
+  },
+  {
+    "id": "a20cc0de-cc63-4c80-958d-8af5a6cb2610",
+    "topic": "Fungsi",
+    "question": "Jika $f(x) = 2x + 3$ dan $g(x) = x^2 - 1$, maka nilai dari komposisi $(g \\circ f)(2)$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$9$"
+      },
+      {
+        "key": "B",
+        "text": "$15$"
+      },
+      {
+        "key": "C",
+        "text": "$48$"
+      },
+      {
+        "key": "D",
+        "text": "$49$"
+      },
+      {
+        "key": "E",
+        "text": "$50$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Komposisi $(g \\circ f)(2) = g(f(2))$.\\nHitung $f(2) = 2(2) + 3 = 4 + 3 = 7$.\\nLalu hitung $g(7) = 7^2 - 1 = 49 - 1 = 48$.",
     "created_at": "2026-10-30T04:48:50.764264+00:00"
   },
   {
@@ -496,33 +376,123 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:50.764264+00:00"
   },
   {
-    "id": "300217cc-45d6-4aa0-8c4d-3527436b3ebf",
+    "id": "fb8c97d4-e2b4-4676-8f19-416f92006351",
     "topic": "Relasi Bagian 2",
-    "question": "Diberikan POSET $(A, \\preceq)$ dengan diagram Hasse yang memiliki elemen minimal $\\{a, b\\}$. Pernyataan yang BENAR mengenai elemen terkecil (*least element*) dari POSET tersebut adalah:",
+    "question": "Sebuah himpunan terurut parsial (POSET) dinotasikan dengan $(S, \\preceq)$. Syarat relasi $\\preceq$ agar membentuk POSET adalah:",
     "options": [
       {
         "key": "A",
-        "text": "Elemen terkecilnya adalah $a$"
+        "text": "Refleksif, Simetris, dan Transitif"
       },
       {
         "key": "B",
-        "text": "Elemen terkecilnya adalah $b$"
+        "text": "Refleksif, Antisimetris, dan Transitif"
       },
       {
         "key": "C",
-        "text": "Elemen terkecilnya ada dua, yaitu $a$ dan $b$"
+        "text": "Irefleksif, Antisimetris, dan Transitif"
       },
       {
         "key": "D",
-        "text": "POSET tersebut tidak memiliki elemen terkecil"
+        "text": "Refleksif, Asimetris, dan Transitif"
       },
       {
         "key": "E",
-        "text": "Elemen terkecilnya adalah infimum dari $a$ dan $b$"
+        "text": "Simetris, Antisimetris, dan Transitif"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "POSET (*Partially Ordered Set*) didefinisikan secara baku sebagai pasangan $(S, \\preceq)$ di mana relasi $\\preceq$ memenuhi tiga sifat: Refleksif, Antisimetris (tolak-simetris), dan Transitif.",
+    "created_at": "2026-10-30T04:48:50.764264+00:00"
+  },
+  {
+    "id": "314e3670-dd86-4feb-a31c-1cee05a7b150",
+    "topic": "Relasi Bagian 2",
+    "question": "Suatu relasi $R$ pada himpunan bilangan bulat $\\mathbb{Z}$ didefinisikan sebagai $a \\, R \\, b \\iff a \\equiv b \\pmod{5}$. Kelas ekuivalensi $[12]$ sama dengan himpunan:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$[0]$"
+      },
+      {
+        "key": "B",
+        "text": "$[1]$"
+      },
+      {
+        "key": "C",
+        "text": "$[2]$"
+      },
+      {
+        "key": "D",
+        "text": "$[3]$"
+      },
+      {
+        "key": "E",
+        "text": "$[4]$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Kelas ekuivalensi $[a]$ terdiri dari semua bilangan $x \\in \\mathbb{Z}$ sedemikian rupa sehingga $x \\equiv a \\pmod 5$. Karena $12 = 2 \\times 5 + 2$, maka $12 \\equiv 2 \\pmod 5$. Oleh karena itu, $[12] = [2] = \\{\\dots, -8, -3, 2, 7, 12, 17, \\dots\\}$.",
+    "created_at": "2026-10-30T04:48:50.764264+00:00"
+  },
+  {
+    "id": "61fe9cd9-6a0b-4bf4-8c7a-ce8bd8ba2ce5",
+    "topic": "Relasi Bagian 2",
+    "question": "Algoritma yang efisien dan sering digunakan untuk menghitung penutupan transitif (*transitive closure*) dari suatu relasi pada himpunan berhingga dengan kompleksitas waktu $O(n^3)$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Algoritma Dijkstra"
+      },
+      {
+        "key": "B",
+        "text": "Algoritma Kruskal"
+      },
+      {
+        "key": "C",
+        "text": "Algoritma Prim"
+      },
+      {
+        "key": "D",
+        "text": "Algoritma Warshall"
+      },
+      {
+        "key": "E",
+        "text": "Algoritma Floyd-Steinberg"
       }
     ],
     "correct_answer": "D",
-    "explanation": "Teorema menyatakan bahwa jika suatu POSET memiliki elemen terkecil, maka elemen terkecil tersebut bersifat **tunggal** dan sekaligus menjadi satu-satunya elemen minimal. Jika terdapat lebih dari satu elemen minimal (yaitu $a$ dan $b$ dengan $a \\ne b$), maka POSET tersebut dipastikan TIDAK memiliki elemen terkecil.",
+    "explanation": "Algoritma Warshall adalah algoritma klasik dalam teori graf dan relasi biner yang menggunakan matriks biner nol-satu bertahap $W^{[0]}, W^{[1]}, \\dots, W^{[n]}$ untuk mencari *transitive closure* relasi dengan kompleksitas $O(n^3)$.",
+    "created_at": "2026-10-30T04:48:50.764264+00:00"
+  },
+  {
+    "id": "a2a0c286-204e-454a-93ec-b878dd07f730",
+    "topic": "Relasi Bagian 2",
+    "question": "Diberikan relasi $R = \\{(1, 2), (2, 3), (3, 4)\\}$ pada himpunan $A = \\{1, 2, 3, 4\\}$. Berapakah banyaknya pasangan terurut pada **penutupan transitif (transitive closure)** dari $R$, yaitu $R^+$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$3$"
+      },
+      {
+        "key": "B",
+        "text": "$5$"
+      },
+      {
+        "key": "C",
+        "text": "$6$"
+      },
+      {
+        "key": "D",
+        "text": "$8$"
+      },
+      {
+        "key": "E",
+        "text": "$10$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Penutupan transitif $R^+$ memuat seluruh rantai keterhubungan:\\n- Panjang 1 ($R$): $(1, 2), (2, 3), (3, 4)$ (3 pasangan)\\n- Panjang 2 ($R^2$): $(1, 3)$ dari $1 \\to 2 \\to 3$, dan $(2, 4)$ dari $2 \\to 3 \\to 4$ (2 pasangan)\\n- Panjang 3 ($R^3$): $(1, 4)$ dari $1 \\to 2 \\to 3 \\to 4$ (1 pasangan)\\nTotal pasangan pada $R^+ = \\{(1,2), (2,3), (3,4), (1,3), (2,4), (1,4)\\}$, yaitu ada $3 + 2 + 1 = 6$ pasangan.",
     "created_at": "2026-10-30T04:48:50.764264+00:00"
   },
   {
@@ -616,154 +586,34 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:50.764264+00:00"
   },
   {
-    "id": "a20cc0de-cc63-4c80-958d-8af5a6cb2610",
-    "topic": "Fungsi",
-    "question": "Jika $f(x) = 2x + 3$ dan $g(x) = x^2 - 1$, maka nilai dari komposisi $(g \\circ f)(2)$ adalah:",
+    "id": "300217cc-45d6-4aa0-8c4d-3527436b3ebf",
+    "topic": "Relasi Bagian 2",
+    "question": "Diberikan POSET $(A, \\preceq)$ dengan diagram Hasse yang memiliki elemen minimal $\\{a, b\\}$. Pernyataan yang BENAR mengenai elemen terkecil (*least element*) dari POSET tersebut adalah:",
     "options": [
       {
         "key": "A",
-        "text": "$9$"
+        "text": "Elemen terkecilnya adalah $a$"
       },
       {
         "key": "B",
-        "text": "$15$"
+        "text": "Elemen terkecilnya adalah $b$"
       },
       {
         "key": "C",
-        "text": "$48$"
+        "text": "Elemen terkecilnya ada dua, yaitu $a$ dan $b$"
       },
       {
         "key": "D",
-        "text": "$49$"
+        "text": "POSET tersebut tidak memiliki elemen terkecil"
       },
       {
         "key": "E",
-        "text": "$50$"
+        "text": "Elemen terkecilnya adalah infimum dari $a$ dan $b$"
       }
     ],
-    "correct_answer": "C",
-    "explanation": "Komposisi $(g \\circ f)(2) = g(f(2))$.\\nHitung $f(2) = 2(2) + 3 = 4 + 3 = 7$.\\nLalu hitung $g(7) = 7^2 - 1 = 49 - 1 = 48$.",
+    "correct_answer": "D",
+    "explanation": "Teorema menyatakan bahwa jika suatu POSET memiliki elemen terkecil, maka elemen terkecil tersebut bersifat **tunggal** dan sekaligus menjadi satu-satunya elemen minimal. Jika terdapat lebih dari satu elemen minimal (yaitu $a$ dan $b$ dengan $a \\ne b$), maka POSET tersebut dipastikan TIDAK memiliki elemen terkecil.",
     "created_at": "2026-10-30T04:48:50.764264+00:00"
-  },
-  {
-    "id": "f24d4208-4b1f-43d1-86d1-522b1cbb7989",
-    "topic": "Fungsi",
-    "question": "Nilai dari ekspresi floor dan ceiling $\\lfloor -3.7 \\rfloor + \\lceil 4.2 \\rceil - \\lfloor 5.9 \\rfloor$ adalah:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$-4$"
-      },
-      {
-        "key": "B",
-        "text": "$-3$"
-      },
-      {
-        "key": "C",
-        "text": "$-2$"
-      },
-      {
-        "key": "D",
-        "text": "$2$"
-      },
-      {
-        "key": "E",
-        "text": "$3$"
-      }
-    ],
-    "correct_answer": "A",
-    "explanation": "Berdasarkan definisi:\\n1. $\\lfloor -3.7 \\rfloor$: bilangan bulat terbesar yang $\\le -3.7$, yaitu $-4$.\\n2. $\\lceil 4.2 \\rceil$: bilangan bulat terkecil yang $\\ge 4.2$, yaitu $5$.\\n3. $\\lfloor 5.9 \\rfloor$: bilangan bulat terbesar yang $\\le 5.9$, yaitu $5$.\\nMaka nilai ekspresi: $(-4) + 5 - 5 = -4$.",
-    "created_at": "2026-10-30T04:48:51.469194+00:00"
-  },
-  {
-    "id": "38cb0523-79e3-48e0-926d-24ba0ef7f629",
-    "topic": "Fungsi",
-    "question": "Diberikan himpunan $A$ dengan $|A| = 4$ dan himpunan $B$ dengan $|B| = 3$. Berapakah banyaknya fungsi satu-ke-satu (injektif) dari $A$ ke $B$?",
-    "options": [
-      {
-        "key": "A",
-        "text": "$0$"
-      },
-      {
-        "key": "B",
-        "text": "$12$"
-      },
-      {
-        "key": "C",
-        "text": "$24$"
-      },
-      {
-        "key": "D",
-        "text": "$64$"
-      },
-      {
-        "key": "E",
-        "text": "$81$"
-      }
-    ],
-    "correct_answer": "A",
-    "explanation": "Berdasarkan *Pigeonhole Principle* (Prinsip Sarang Merpati): Agar suatu fungsi $f: A \\to B$ dapat bersifat injektif, maka syarat mutlaknya adalah $|A| \\le |B|$. Karena di sini $|A| = 4 > |B| = 3$, pasti setidaknya ada dua elemen di $A$ yang dipetakan ke elemen yang sama di $B$. Sehingga tidak mungkin ada fungsi injektif dari $A$ ke $B$ (banyaknya adalah $0$).",
-    "created_at": "2026-10-30T04:48:51.469194+00:00"
-  },
-  {
-    "id": "d06c3ea8-0728-446e-9ab5-79590929b11a",
-    "topic": "Fungsi",
-    "question": "Berapakah banyaknya fungsi korespondensi satu-satu (bijektif) dari himpunan $A = \\{1, 2, 3, 4, 5\\}$ ke dirinya sendiri ($A$)?",
-    "options": [
-      {
-        "key": "A",
-        "text": "$5^5 = 3125$"
-      },
-      {
-        "key": "B",
-        "text": "$5! = 120$"
-      },
-      {
-        "key": "C",
-        "text": "$2^5 = 32$"
-      },
-      {
-        "key": "D",
-        "text": "$P(5, 2) = 20$"
-      },
-      {
-        "key": "E",
-        "text": "$C(5, 2) = 10$"
-      }
-    ],
-    "correct_answer": "B",
-    "explanation": "Banyaknya fungsi bijektif dari himpunan dengan $n$ elemen ke himpunan dengan $n$ elemen sama dengan banyaknya permutasi dari $n$ elemen, yaitu $n!$. Di sini $n = 5$, sehingga banyaknya fungsi bijektif adalah $5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$.",
-    "created_at": "2026-10-30T04:48:51.469194+00:00"
-  },
-  {
-    "id": "c6668c2f-b9b1-4321-8c8e-23b6ab7784fe",
-    "topic": "Fungsi",
-    "question": "Untuk setiap bilangan real $x$ dan bilangan bulat positif $n$, manakah identitas sifat fungsi floor yang SELALU BENAR?",
-    "options": [
-      {
-        "key": "A",
-        "text": "$\\lfloor x + n \\rfloor = \\lfloor x \\rfloor + n$"
-      },
-      {
-        "key": "B",
-        "text": "$\\lfloor nx \\rfloor = n \\lfloor x \\rfloor$"
-      },
-      {
-        "key": "C",
-        "text": "$\\lfloor x / n \\rfloor = \\lfloor x \\rfloor / n$"
-      },
-      {
-        "key": "D",
-        "text": "$\\lfloor -x \\rfloor = -\\lfloor x \\rfloor$"
-      },
-      {
-        "key": "E",
-        "text": "$\\lfloor x^2 \\rfloor = (\\lfloor x \\rfloor)^2$"
-      }
-    ],
-    "correct_answer": "A",
-    "explanation": "Salah satu sifat dasar fungsi floor adalah: jika $n$ adalah bilangan bulat, maka $\\lfloor x + n \\rfloor = \\lfloor x \\rfloor + n$ untuk setiap $x \\in \\mathbb{R}$. Pilihan lain tidak selalu berlaku (misal $\\lfloor -1.2 \\rfloor = -2 \\ne -\\lfloor 1.2 \\rfloor = -1$).",
-    "created_at": "2026-10-30T04:48:51.469194+00:00"
   },
   {
     "id": "bc2d9e36-c289-4cec-9cb9-c13fd5a1aee6",
@@ -793,96 +643,6 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     ],
     "correct_answer": "B",
     "explanation": "Dapat dibuktikan dengan iterasi bertingkat:\\n$H_n = 2H_{n-1} + 1 = 2(2H_{n-2} + 1) + 1 = 2^2 H_{n-2} + 2 + 1 = \\dots = 2^{n-1} H_1 + 2^{n-2} + \\dots + 2 + 1$.\\nKarena $H_1 = 1$, ini adalah deret geometri berhingga: $\\sum_{k=0}^{n-1} 2^k = \\frac{2^n - 1}{2 - 1} = 2^n - 1$.",
-    "created_at": "2026-10-30T04:48:51.469194+00:00"
-  },
-  {
-    "id": "fc0d4b7a-37d0-490d-a279-8dd963104b0b",
-    "topic": "Relasi Rekurensi",
-    "question": "Diberikan relasi rekurensi linier homogen $a_n - 7a_{n-1} + 10a_{n-2} = 0$. Persamaan karakteristik dari relasi rekurensi tersebut adalah:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$r^2 + 7r + 10 = 0$"
-      },
-      {
-        "key": "B",
-        "text": "$r^2 - 7r + 10 = 0$"
-      },
-      {
-        "key": "C",
-        "text": "$r^2 - 7r - 10 = 0$"
-      },
-      {
-        "key": "D",
-        "text": "$r^2 + 10r - 7 = 0$"
-      },
-      {
-        "key": "E",
-        "text": "$r^2 - 10r + 7 = 0$"
-      }
-    ],
-    "correct_answer": "B",
-    "explanation": "Dengan mensubstitusikan $a_n = r^n$, maka:\\n$r^n - 7r^{n-1} + 10r^{n-2} = 0$\\nBagi kedua ruas dengan $r^{n-2}$ (untuk $r \\ne 0$):\\n$r^2 - 7r + 10 = 0$.",
-    "created_at": "2026-10-30T04:48:51.469194+00:00"
-  },
-  {
-    "id": "7cc586e6-ad95-46ed-8837-390a5583ee69",
-    "topic": "Relasi Rekurensi",
-    "question": "Akar-akar karakteristik dari persamaan $r^2 - 7r + 10 = 0$ adalah $r_1 = 2$ dan $r_2 = 5$. Jika kondisi awal adalah $a_0 = 1$ dan $a_1 = 8$, maka rumus solusi eksplisit untuk $a_n$ adalah:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$a_n = 2 \\cdot 2^n - 5^n$"
-      },
-      {
-        "key": "B",
-        "text": "$a_n = -1 \\cdot 2^n + 2 \\cdot 5^n$"
-      },
-      {
-        "key": "C",
-        "text": "$a_n = 3 \\cdot 2^n - 2 \\cdot 5^n$"
-      },
-      {
-        "key": "D",
-        "text": "$a_n = 2^n + 5^n$"
-      },
-      {
-        "key": "E",
-        "text": "$a_n = 4 \\cdot 2^n - 3 \\cdot 5^n$"
-      }
-    ],
-    "correct_answer": "B",
-    "explanation": "Bentuk umum solusi: $a_n = \\alpha_1 (2)^n + \\alpha_2 (5)^n$.\\n1. Untuk $n=0$: $\\alpha_1 + \\alpha_2 = 1 \\implies \\alpha_1 = 1 - \\alpha_2$\\n2. Untuk $n=1$: $2\\alpha_1 + 5\\alpha_2 = 8$\\nSubstitusi: $2(1 - \\alpha_2) + 5\\alpha_2 = 8 \\implies 2 + 3\\alpha_2 = 8 \\implies 3\\alpha_2 = 6 \\implies \\alpha_2 = 2$.\\nMaka $\\alpha_1 = 1 - 2 = -1$.\\nSehingga solusinya adalah $a_n = -1 \\cdot 2^n + 2 \\cdot 5^n$.",
-    "created_at": "2026-10-30T04:48:51.469194+00:00"
-  },
-  {
-    "id": "bbe32583-899b-40bf-9224-dc5e7009f8de",
-    "topic": "Relasi Rekurensi",
-    "question": "Jika persamaan karakteristik dari relasi rekurensi linier homogen berderajat dua memiliki akar kembar $r_1 = r_2 = 3$, maka bentuk umum solusi dari $a_n$ adalah:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$a_n = \\alpha_1 3^n + \\alpha_2 3^n$"
-      },
-      {
-        "key": "B",
-        "text": "$a_n = (\\alpha_1 + \\alpha_2 n) 3^n$"
-      },
-      {
-        "key": "C",
-        "text": "$a_n = \\alpha_1 3^n + \\alpha_2 (-3)^n$"
-      },
-      {
-        "key": "D",
-        "text": "$a_n = (\\alpha_1 n + \\alpha_2 n^2) 3^n$"
-      },
-      {
-        "key": "E",
-        "text": "$a_n = \\alpha_1 3^n + \\alpha_2$"
-      }
-    ],
-    "correct_answer": "B",
-    "explanation": "Teorema relasi rekurensi linier homogen berkoefisien konstan menyatakan: jika persamaan karakteristik memiliki akar berulang (akar kembar) dengan multiplisitas $m=2$, yaitu $r$, maka solusi umum berbentuk kombinasi linier dari $r^n$ dan $n r^n$, yaitu $a_n = (\\alpha_1 + \\alpha_2 n) r^n$.",
     "created_at": "2026-10-30T04:48:51.469194+00:00"
   },
   {
@@ -916,94 +676,244 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:51.469194+00:00"
   },
   {
-    "id": "d1ef2b75-1ab6-4e64-ae98-ac3288672b4f",
+    "id": "bbe32583-899b-40bf-9224-dc5e7009f8de",
     "topic": "Relasi Rekurensi",
-    "question": "Diberikan relasi rekurensi linier orde 1: $a_n = 4a_{n-1}$ dengan kondisi awal $a_0 = 3$. Nilai dari $a_4$ adalah:",
+    "question": "Jika persamaan karakteristik dari relasi rekurensi linier homogen berderajat dua memiliki akar kembar $r_1 = r_2 = 3$, maka bentuk umum solusi dari $a_n$ adalah:",
     "options": [
       {
         "key": "A",
-        "text": "$48$"
+        "text": "$a_n = \\alpha_1 3^n + \\alpha_2 3^n$"
       },
       {
         "key": "B",
-        "text": "$192$"
+        "text": "$a_n = (\\alpha_1 + \\alpha_2 n) 3^n$"
       },
       {
         "key": "C",
-        "text": "$768$"
+        "text": "$a_n = \\alpha_1 3^n + \\alpha_2 (-3)^n$"
       },
       {
         "key": "D",
-        "text": "$1024$"
+        "text": "$a_n = (\\alpha_1 n + \\alpha_2 n^2) 3^n$"
       },
       {
         "key": "E",
-        "text": "$3072$"
-      }
-    ],
-    "correct_answer": "C",
-    "explanation": "Relasi rekurensi geometri $a_n = 4a_{n-1}$ memiliki solusi eksplisit $a_n = a_0 \\cdot 4^n = 3 \\cdot 4^n$.\\nUntuk $n = 4$:\\n$a_4 = 3 \\cdot 4^4 = 3 \\cdot 256 = 768$.",
-    "created_at": "2026-10-30T04:48:51.737146+00:00"
-  },
-  {
-    "id": "d6e92cd6-9e6a-46e0-b62f-cea91889a6f3",
-    "topic": "Relasi Rekurensi",
-    "question": "Untuk relasi rekurensi non-homogen $a_n - 3a_{n-1} = 2 \\cdot 5^n$, tebakan bentuk solusi partikular $a_n^{(p)}$ yang tepat adalah:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$A \\cdot 3^n$"
-      },
-      {
-        "key": "B",
-        "text": "$A \\cdot 5^n$"
-      },
-      {
-        "key": "C",
-        "text": "$A n \\cdot 5^n$"
-      },
-      {
-        "key": "D",
-        "text": "$A \\cdot n^2$"
-      },
-      {
-        "key": "E",
-        "text": "$A \\cdot 2^n$"
+        "text": "$a_n = \\alpha_1 3^n + \\alpha_2$"
       }
     ],
     "correct_answer": "B",
-    "explanation": "Akar persamaan karakteristik homogen $r - 3 = 0$ adalah $r = 3$. Fungsi non-homogen adalah $F(n) = 2 \\cdot 5^n$. Karena basis $5$ bukan merupakan akar karakteristik ($5 \\ne 3$), maka bentuk solusi partikularnya adalah konstanta dikali $5^n$, yaitu $a_n^{(p)} = A \\cdot 5^n$.",
-    "created_at": "2026-10-30T04:48:51.737146+00:00"
+    "explanation": "Teorema relasi rekurensi linier homogen berkoefisien konstan menyatakan: jika persamaan karakteristik memiliki akar berulang (akar kembar) dengan multiplisitas $m=2$, yaitu $r$, maka solusi umum berbentuk kombinasi linier dari $r^n$ dan $n r^n$, yaitu $a_n = (\\alpha_1 + \\alpha_2 n) r^n$.",
+    "created_at": "2026-10-30T04:48:51.469194+00:00"
   },
   {
-    "id": "ee4b65f8-61bb-4da5-9d5e-76014b5cef51",
-    "topic": "Aturan Dasar Berhitung",
-    "question": "Sebuah restoran menyediakan 4 jenis hidangan pembuka, 6 jenis hidangan utama, dan 3 jenis hidangan penutup. Berapa banyak kombinasi paket menu lengkap (1 pembuka, 1 utama, 1 penutup) yang dapat dipilih pengunjung?",
+    "id": "7cc586e6-ad95-46ed-8837-390a5583ee69",
+    "topic": "Relasi Rekurensi",
+    "question": "Akar-akar karakteristik dari persamaan $r^2 - 7r + 10 = 0$ adalah $r_1 = 2$ dan $r_2 = 5$. Jika kondisi awal adalah $a_0 = 1$ dan $a_1 = 8$, maka rumus solusi eksplisit untuk $a_n$ adalah:",
     "options": [
       {
         "key": "A",
-        "text": "$13$"
+        "text": "$a_n = 2 \\cdot 2^n - 5^n$"
       },
       {
         "key": "B",
-        "text": "$24$"
+        "text": "$a_n = -1 \\cdot 2^n + 2 \\cdot 5^n$"
       },
       {
         "key": "C",
-        "text": "$72$"
+        "text": "$a_n = 3 \\cdot 2^n - 2 \\cdot 5^n$"
       },
       {
         "key": "D",
-        "text": "$96$"
+        "text": "$a_n = 2^n + 5^n$"
       },
       {
         "key": "E",
-        "text": "$144$"
+        "text": "$a_n = 4 \\cdot 2^n - 3 \\cdot 5^n$"
       }
     ],
-    "correct_answer": "C",
-    "explanation": "Berdasarkan Aturan Perkalian (*Product Rule*), jika prosedur terdiri dari langkah 1, 2, dan 3 berturut-turut dengan $n_1, n_2, n_3$ cara, total cara adalah $n_1 \\times n_2 \\times n_3$. Di sini: $4 \\times 6 \\times 3 = 72$ cara.",
-    "created_at": "2026-10-30T04:48:51.737146+00:00"
+    "correct_answer": "B",
+    "explanation": "Bentuk umum solusi: $a_n = \\alpha_1 (2)^n + \\alpha_2 (5)^n$.\\n1. Untuk $n=0$: $\\alpha_1 + \\alpha_2 = 1 \\implies \\alpha_1 = 1 - \\alpha_2$\\n2. Untuk $n=1$: $2\\alpha_1 + 5\\alpha_2 = 8$\\nSubstitusi: $2(1 - \\alpha_2) + 5\\alpha_2 = 8 \\implies 2 + 3\\alpha_2 = 8 \\implies 3\\alpha_2 = 6 \\implies \\alpha_2 = 2$.\\nMaka $\\alpha_1 = 1 - 2 = -1$.\\nSehingga solusinya adalah $a_n = -1 \\cdot 2^n + 2 \\cdot 5^n$.",
+    "created_at": "2026-10-30T04:48:51.469194+00:00"
+  },
+  {
+    "id": "fc0d4b7a-37d0-490d-a279-8dd963104b0b",
+    "topic": "Relasi Rekurensi",
+    "question": "Diberikan relasi rekurensi linier homogen $a_n - 7a_{n-1} + 10a_{n-2} = 0$. Persamaan karakteristik dari relasi rekurensi tersebut adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$r^2 + 7r + 10 = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$r^2 - 7r + 10 = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$r^2 - 7r - 10 = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$r^2 + 10r - 7 = 0$"
+      },
+      {
+        "key": "E",
+        "text": "$r^2 - 10r + 7 = 0$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Dengan mensubstitusikan $a_n = r^n$, maka:\\n$r^n - 7r^{n-1} + 10r^{n-2} = 0$\\nBagi kedua ruas dengan $r^{n-2}$ (untuk $r \\ne 0$):\\n$r^2 - 7r + 10 = 0$.",
+    "created_at": "2026-10-30T04:48:51.469194+00:00"
+  },
+  {
+    "id": "c6668c2f-b9b1-4321-8c8e-23b6ab7784fe",
+    "topic": "Fungsi",
+    "question": "Untuk setiap bilangan real $x$ dan bilangan bulat positif $n$, manakah identitas sifat fungsi floor yang SELALU BENAR?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\lfloor x + n \\rfloor = \\lfloor x \\rfloor + n$"
+      },
+      {
+        "key": "B",
+        "text": "$\\lfloor nx \\rfloor = n \\lfloor x \\rfloor$"
+      },
+      {
+        "key": "C",
+        "text": "$\\lfloor x / n \\rfloor = \\lfloor x \\rfloor / n$"
+      },
+      {
+        "key": "D",
+        "text": "$\\lfloor -x \\rfloor = -\\lfloor x \\rfloor$"
+      },
+      {
+        "key": "E",
+        "text": "$\\lfloor x^2 \\rfloor = (\\lfloor x \\rfloor)^2$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Salah satu sifat dasar fungsi floor adalah: jika $n$ adalah bilangan bulat, maka $\\lfloor x + n \\rfloor = \\lfloor x \\rfloor + n$ untuk setiap $x \\in \\mathbb{R}$. Pilihan lain tidak selalu berlaku (misal $\\lfloor -1.2 \\rfloor = -2 \\ne -\\lfloor 1.2 \\rfloor = -1$).",
+    "created_at": "2026-10-30T04:48:51.469194+00:00"
+  },
+  {
+    "id": "d06c3ea8-0728-446e-9ab5-79590929b11a",
+    "topic": "Fungsi",
+    "question": "Berapakah banyaknya fungsi korespondensi satu-satu (bijektif) dari himpunan $A = \\{1, 2, 3, 4, 5\\}$ ke dirinya sendiri ($A$)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$5^5 = 3125$"
+      },
+      {
+        "key": "B",
+        "text": "$5! = 120$"
+      },
+      {
+        "key": "C",
+        "text": "$2^5 = 32$"
+      },
+      {
+        "key": "D",
+        "text": "$P(5, 2) = 20$"
+      },
+      {
+        "key": "E",
+        "text": "$C(5, 2) = 10$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Banyaknya fungsi bijektif dari himpunan dengan $n$ elemen ke himpunan dengan $n$ elemen sama dengan banyaknya permutasi dari $n$ elemen, yaitu $n!$. Di sini $n = 5$, sehingga banyaknya fungsi bijektif adalah $5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$.",
+    "created_at": "2026-10-30T04:48:51.469194+00:00"
+  },
+  {
+    "id": "38cb0523-79e3-48e0-926d-24ba0ef7f629",
+    "topic": "Fungsi",
+    "question": "Diberikan himpunan $A$ dengan $|A| = 4$ dan himpunan $B$ dengan $|B| = 3$. Berapakah banyaknya fungsi satu-ke-satu (injektif) dari $A$ ke $B$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$0$"
+      },
+      {
+        "key": "B",
+        "text": "$12$"
+      },
+      {
+        "key": "C",
+        "text": "$24$"
+      },
+      {
+        "key": "D",
+        "text": "$64$"
+      },
+      {
+        "key": "E",
+        "text": "$81$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Berdasarkan *Pigeonhole Principle* (Prinsip Sarang Merpati): Agar suatu fungsi $f: A \\to B$ dapat bersifat injektif, maka syarat mutlaknya adalah $|A| \\le |B|$. Karena di sini $|A| = 4 > |B| = 3$, pasti setidaknya ada dua elemen di $A$ yang dipetakan ke elemen yang sama di $B$. Sehingga tidak mungkin ada fungsi injektif dari $A$ ke $B$ (banyaknya adalah $0$).",
+    "created_at": "2026-10-30T04:48:51.469194+00:00"
+  },
+  {
+    "id": "f24d4208-4b1f-43d1-86d1-522b1cbb7989",
+    "topic": "Fungsi",
+    "question": "Nilai dari ekspresi floor dan ceiling $\\lfloor -3.7 \\rfloor + \\lceil 4.2 \\rceil - \\lfloor 5.9 \\rfloor$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$-4$"
+      },
+      {
+        "key": "B",
+        "text": "$-3$"
+      },
+      {
+        "key": "C",
+        "text": "$-2$"
+      },
+      {
+        "key": "D",
+        "text": "$2$"
+      },
+      {
+        "key": "E",
+        "text": "$3$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Berdasarkan definisi:\\n1. $\\lfloor -3.7 \\rfloor$: bilangan bulat terbesar yang $\\le -3.7$, yaitu $-4$.\\n2. $\\lceil 4.2 \\rceil$: bilangan bulat terkecil yang $\\ge 4.2$, yaitu $5$.\\n3. $\\lfloor 5.9 \\rfloor$: bilangan bulat terbesar yang $\\le 5.9$, yaitu $5$.\\nMaka nilai ekspresi: $(-4) + 5 - 5 = -4$.",
+    "created_at": "2026-10-30T04:48:51.469194+00:00"
+  },
+  {
+    "id": "245c6230-33e4-4acd-b3d5-85be03a62f33",
+    "topic": "Relasi Rekurensi",
+    "question": "Suku ke-$n$ barisan Fibonacci didefinisikan dengan $F_0 = 0, F_1 = 1$ dan $F_n = F_{n-1} + F_{n-2}$ untuk $n \\ge 2$. Nilai dari $F_7$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$8$"
+      },
+      {
+        "key": "B",
+        "text": "$13$"
+      },
+      {
+        "key": "C",
+        "text": "$21$"
+      },
+      {
+        "key": "D",
+        "text": "$34$"
+      },
+      {
+        "key": "E",
+        "text": "$55$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Mari hitung suku-suku barisan:\\n$F_0 = 0$\\n$F_1 = 1$\\n$F_2 = 0 + 1 = 1$\\n$F_3 = 1 + 1 = 2$\\n$F_4 = 1 + 2 = 3$\\n$F_5 = 2 + 3 = 5$\\n$F_6 = 3 + 5 = 8$\\n$F_7 = 5 + 8 = 13$.",
+    "created_at": "2026-10-30T04:48:51.469194+00:00"
   },
   {
     "id": "68a57994-91b9-408c-9632-02ad3d610747",
@@ -1066,6 +976,36 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:51.737146+00:00"
   },
   {
+    "id": "ee4b65f8-61bb-4da5-9d5e-76014b5cef51",
+    "topic": "Aturan Dasar Berhitung",
+    "question": "Sebuah restoran menyediakan 4 jenis hidangan pembuka, 6 jenis hidangan utama, dan 3 jenis hidangan penutup. Berapa banyak kombinasi paket menu lengkap (1 pembuka, 1 utama, 1 penutup) yang dapat dipilih pengunjung?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$13$"
+      },
+      {
+        "key": "B",
+        "text": "$24$"
+      },
+      {
+        "key": "C",
+        "text": "$72$"
+      },
+      {
+        "key": "D",
+        "text": "$96$"
+      },
+      {
+        "key": "E",
+        "text": "$144$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Berdasarkan Aturan Perkalian (*Product Rule*), jika prosedur terdiri dari langkah 1, 2, dan 3 berturut-turut dengan $n_1, n_2, n_3$ cara, total cara adalah $n_1 \\times n_2 \\times n_3$. Di sini: $4 \\times 6 \\times 3 = 72$ cara.",
+    "created_at": "2026-10-30T04:48:51.737146+00:00"
+  },
+  {
     "id": "2e0f66ad-2fdf-4b09-888d-7229f61e8c60",
     "topic": "Aturan Dasar Berhitung",
     "question": "Sebuah plat nomor kendaraan di suatu wilayah terdiri dari 2 huruf di awal, diikuti 4 angka, dan diakhiri 2 huruf. Jika huruf pertama tidak boleh vokal (A, I, U, E, O) dan angka pertama tidak boleh 0, berapakah banyaknya plat nomor yang dapat dibuat jika huruf dan angka boleh berulang?",
@@ -1123,6 +1063,36 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     ],
     "correct_answer": "A",
     "explanation": "Jumlah mahasiswa yang mengambil minimal satu mata kuliah adalah:\\n$|A \\cup M| = |A| + |M| - |A \\cap M| = 60 + 50 - 20 = 90$.\\nMahasiswa yang tidak mengambil satupun adalah komplemen dari gabungan tersebut:\\n$100 - |A \\cup M| = 100 - 90 = 10$ orang.",
+    "created_at": "2026-10-30T04:48:51.737146+00:00"
+  },
+  {
+    "id": "d1ef2b75-1ab6-4e64-ae98-ac3288672b4f",
+    "topic": "Relasi Rekurensi",
+    "question": "Diberikan relasi rekurensi linier orde 1: $a_n = 4a_{n-1}$ dengan kondisi awal $a_0 = 3$. Nilai dari $a_4$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$48$"
+      },
+      {
+        "key": "B",
+        "text": "$192$"
+      },
+      {
+        "key": "C",
+        "text": "$768$"
+      },
+      {
+        "key": "D",
+        "text": "$1024$"
+      },
+      {
+        "key": "E",
+        "text": "$3072$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Relasi rekurensi geometri $a_n = 4a_{n-1}$ memiliki solusi eksplisit $a_n = a_0 \\cdot 4^n = 3 \\cdot 4^n$.\\nUntuk $n = 4$:\\n$a_4 = 3 \\cdot 4^4 = 3 \\cdot 256 = 768$.",
     "created_at": "2026-10-30T04:48:51.737146+00:00"
   },
   {
@@ -1214,6 +1184,96 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "correct_answer": "A",
     "explanation": "Gunakan metode komplemen (*subtraction rule*):\\n- Total seluruh kemungkinan password 6 huruf = $26^6$.\\n- Password 6 huruf yang TIDAK memuat huruf 'a' sama sekali (hanya memilih dari 25 huruf lainnya) = $25^6$.\\nMaka banyaknya password yang memuat setidaknya satu huruf 'a' adalah $26^6 - 25^6$.",
     "created_at": "2026-10-30T04:48:51.737146+00:00"
+  },
+  {
+    "id": "d6e92cd6-9e6a-46e0-b62f-cea91889a6f3",
+    "topic": "Relasi Rekurensi",
+    "question": "Untuk relasi rekurensi non-homogen $a_n - 3a_{n-1} = 2 \\cdot 5^n$, tebakan bentuk solusi partikular $a_n^{(p)}$ yang tepat adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$A \\cdot 3^n$"
+      },
+      {
+        "key": "B",
+        "text": "$A \\cdot 5^n$"
+      },
+      {
+        "key": "C",
+        "text": "$A n \\cdot 5^n$"
+      },
+      {
+        "key": "D",
+        "text": "$A \\cdot n^2$"
+      },
+      {
+        "key": "E",
+        "text": "$A \\cdot 2^n$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Akar persamaan karakteristik homogen $r - 3 = 0$ adalah $r = 3$. Fungsi non-homogen adalah $F(n) = 2 \\cdot 5^n$. Karena basis $5$ bukan merupakan akar karakteristik ($5 \\ne 3$), maka bentuk solusi partikularnya adalah konstanta dikali $5^n$, yaitu $a_n^{(p)} = A \\cdot 5^n$.",
+    "created_at": "2026-10-30T04:48:51.737146+00:00"
+  },
+  {
+    "id": "50b03bf8-f280-44e1-b631-084cbbe0b176",
+    "topic": "Permutasi dan Kombinasi",
+    "question": "Dari sebuah kelompok yang terdiri dari 7 pria dan 5 wanita, akan dibentuk delegasi yang terdiri dari 3 pria dan 2 wanita. Banyaknya susunan delegasi yang dapat dibentuk adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$350$"
+      },
+      {
+        "key": "B",
+        "text": "$792$"
+      },
+      {
+        "key": "C",
+        "text": "$120$"
+      },
+      {
+        "key": "D",
+        "text": "$210$"
+      },
+      {
+        "key": "E",
+        "text": "$420$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Urutan dalam delegasi tidak diperhatikan, sehingga menggunakan Kombinasi:\\n- Memilih 3 pria dari 7 pria: $C(7, 3) = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$\\n- Memilih 2 wanita dari 5 wanita: $C(5, 2) = \\frac{5 \\times 4}{2 \\times 1} = 10$\\nBerdasarkan aturan perkalian: total cara = $C(7, 3) \\times C(5, 2) = 35 \\times 10 = 350$ cara.",
+    "created_at": "2026-10-30T04:48:52.337074+00:00"
+  },
+  {
+    "id": "c02b3c1c-5ec9-4e91-870d-5f821bb893eb",
+    "topic": "Permutasi dan Kombinasi",
+    "question": "Berapakah banyaknya susunan permutasi yang berbeda dari seluruh huruf pada kata **\"MATEMATIKA\"**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$151.200$"
+      },
+      {
+        "key": "B",
+        "text": "$302.400$"
+      },
+      {
+        "key": "C",
+        "text": "$604.800$"
+      },
+      {
+        "key": "D",
+        "text": "$3.628.800$"
+      },
+      {
+        "key": "E",
+        "text": "$75.600$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Kata MATEMATIKA terdiri dari 10 huruf dengan rincian perulangan:\\n- M = 2 huruf\\n- A = 3 huruf\\n- T = 2 huruf\\n- E = 1 huruf\\n- I = 1 huruf\\n- K = 1 huruf\\nRumus permutasi dengan unsur identik:\\n$P = \\frac{10!}{2! \\, 3! \\, 2! \\, 1! \\, 1! \\, 1!} = \\frac{3.628.800}{2 \\times 6 \\times 2} = \\frac{3.628.800}{24} = 151.200$ susunan.",
+    "created_at": "2026-10-30T04:48:52.337074+00:00"
   },
   {
     "id": "ed43cf3e-9e75-4581-828e-f763ea0d51e2",
@@ -1456,64 +1516,34 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:52.337074+00:00"
   },
   {
-    "id": "50b03bf8-f280-44e1-b631-084cbbe0b176",
+    "id": "c01eaee4-0faf-440e-8341-22f2bdb91441",
     "topic": "Permutasi dan Kombinasi",
-    "question": "Dari sebuah kelompok yang terdiri dari 7 pria dan 5 wanita, akan dibentuk delegasi yang terdiri dari 3 pria dan 2 wanita. Banyaknya susunan delegasi yang dapat dibentuk adalah:",
+    "question": "Nilai dari jumlah koefisien binomial $\\sum_{k=0}^{n} \\binom{n}{k} = \\binom{n}{0} + \\binom{n}{1} + \\dots + \\binom{n}{n}$ adalah:",
     "options": [
       {
         "key": "A",
-        "text": "$350$"
+        "text": "$n!$"
       },
       {
         "key": "B",
-        "text": "$792$"
+        "text": "$2^n$"
       },
       {
         "key": "C",
-        "text": "$120$"
+        "text": "$2^{n-1}$"
       },
       {
         "key": "D",
-        "text": "$210$"
+        "text": "$n^2$"
       },
       {
         "key": "E",
-        "text": "$420$"
+        "text": "$2^{n+1}$"
       }
     ],
-    "correct_answer": "A",
-    "explanation": "Urutan dalam delegasi tidak diperhatikan, sehingga menggunakan Kombinasi:\\n- Memilih 3 pria dari 7 pria: $C(7, 3) = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$\\n- Memilih 2 wanita dari 5 wanita: $C(5, 2) = \\frac{5 \\times 4}{2 \\times 1} = 10$\\nBerdasarkan aturan perkalian: total cara = $C(7, 3) \\times C(5, 2) = 35 \\times 10 = 350$ cara.",
-    "created_at": "2026-10-30T04:48:52.337074+00:00"
-  },
-  {
-    "id": "c02b3c1c-5ec9-4e91-870d-5f821bb893eb",
-    "topic": "Permutasi dan Kombinasi",
-    "question": "Berapakah banyaknya susunan permutasi yang berbeda dari seluruh huruf pada kata **\"MATEMATIKA\"**?",
-    "options": [
-      {
-        "key": "A",
-        "text": "$151.200$"
-      },
-      {
-        "key": "B",
-        "text": "$302.400$"
-      },
-      {
-        "key": "C",
-        "text": "$604.800$"
-      },
-      {
-        "key": "D",
-        "text": "$3.628.800$"
-      },
-      {
-        "key": "E",
-        "text": "$75.600$"
-      }
-    ],
-    "correct_answer": "A",
-    "explanation": "Kata MATEMATIKA terdiri dari 10 huruf dengan rincian perulangan:\\n- M = 2 huruf\\n- A = 3 huruf\\n- T = 2 huruf\\n- E = 1 huruf\\n- I = 1 huruf\\n- K = 1 huruf\\nRumus permutasi dengan unsur identik:\\n$P = \\frac{10!}{2! \\, 3! \\, 2! \\, 1! \\, 1! \\, 1!} = \\frac{3.628.800}{2 \\times 6 \\times 2} = \\frac{3.628.800}{24} = 151.200$ susunan.",
-    "created_at": "2026-10-30T04:48:52.337074+00:00"
+    "correct_answer": "B",
+    "explanation": "Berdasarkan Teorema Binomial: $(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k$. Dengan mensubstitusikan $x = 1$ dan $y = 1$, kita peroleh $(1 + 1)^n = \\sum_{k=0}^n \\binom{n}{k} = 2^n$. Ini juga menunjukkan banyaknya seluruh himpunan bagian dari himpunan beranggotakan $n$ elemen.",
+    "created_at": "2026-10-30T04:48:52.930986+00:00"
   },
   {
     "id": "7c405f1d-801f-4fc5-8a2e-9c61b2e9ca2f",
@@ -1633,36 +1663,6 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     ],
     "correct_answer": "A",
     "explanation": "Berdasarkan Teorema Binomial: suku umum pada ekspansi $(a + b)^n$ adalah $\\binom{n}{k} a^{n-k} b^k$.\\nDi sini $n = 5, a = 2x, b = -3y$. Untuk memperoleh $x^3 y^2$, maka $n-k = 3 \\implies k = 2$.\\nSuku tersebut adalah:\\n$\\binom{5}{2} (2x)^3 (-3y)^2 = 10 \\cdot (8x^3) \\cdot (9y^2) = 10 \\cdot 72 \\cdot x^3 y^2 = 720 x^3 y^2$.\\nJadi koefisiennya adalah $720$.",
-    "created_at": "2026-10-30T04:48:52.930986+00:00"
-  },
-  {
-    "id": "c01eaee4-0faf-440e-8341-22f2bdb91441",
-    "topic": "Permutasi dan Kombinasi",
-    "question": "Nilai dari jumlah koefisien binomial $\\sum_{k=0}^{n} \\binom{n}{k} = \\binom{n}{0} + \\binom{n}{1} + \\dots + \\binom{n}{n}$ adalah:",
-    "options": [
-      {
-        "key": "A",
-        "text": "$n!$"
-      },
-      {
-        "key": "B",
-        "text": "$2^n$"
-      },
-      {
-        "key": "C",
-        "text": "$2^{n-1}$"
-      },
-      {
-        "key": "D",
-        "text": "$n^2$"
-      },
-      {
-        "key": "E",
-        "text": "$2^{n+1}$"
-      }
-    ],
-    "correct_answer": "B",
-    "explanation": "Berdasarkan Teorema Binomial: $(x + y)^n = \\sum_{k=0}^n \\binom{n}{k} x^{n-k} y^k$. Dengan mensubstitusikan $x = 1$ dan $y = 1$, kita peroleh $(1 + 1)^n = \\sum_{k=0}^n \\binom{n}{k} = 2^n$. Ini juga menunjukkan banyaknya seluruh himpunan bagian dari himpunan beranggotakan $n$ elemen.",
     "created_at": "2026-10-30T04:48:52.930986+00:00"
   },
   {
@@ -1816,6 +1816,36 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:52.930986+00:00"
   },
   {
+    "id": "b013b3b0-5233-4d69-840e-392aa59bc1b1",
+    "topic": "Permutasi dan Kombinasi",
+    "question": "Nilai dari $\\binom{8}{3} + \\binom{8}{4}$ berdasarkan Identitas Pascal sama dengan:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\binom{8}{7}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\binom{9}{3}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\binom{9}{4}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\binom{16}{7}$"
+      },
+      {
+        "key": "E",
+        "text": "$\\binom{9}{5}$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Identitas Pascal menyatakan bahwa untuk semua bilangan bulat positif $n$ dan $k$ dengan $n \\ge k$:\\n$\\binom{n}{k-1} + \\binom{n}{k} = \\binom{n+1}{k}$.\\nDi sini $n = 8$ dan $k = 4$, sehingga:\\n$\\binom{8}{3} + \\binom{8}{4} = \\binom{9}{4}$.",
+    "created_at": "2026-10-30T04:48:53.195176+00:00"
+  },
+  {
     "id": "224025f5-a762-437d-a459-6cf4120d9c4d",
     "topic": "Prinsip Sarang Merpati",
     "question": "Berapakah jumlah minimum bilangan bulat yang harus dipilih secara acak dari himpunan $\\{1, 2, 3, \\dots, 20\\}$ untuk menjamin bahwa setidaknya ada **satu pasang bilangan yang memiliki selisih persis 10**?",
@@ -1846,34 +1876,34 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T04:48:53.195176+00:00"
   },
   {
-    "id": "b013b3b0-5233-4d69-840e-392aa59bc1b1",
-    "topic": "Permutasi dan Kombinasi",
-    "question": "Nilai dari $\\binom{8}{3} + \\binom{8}{4}$ berdasarkan Identitas Pascal sama dengan:",
+    "id": "28028413-d423-481d-8d25-b09dde48dcd2",
+    "topic": "Relasi Bagian 1",
+    "question": "Perhatikan graf berarah (digraf) berikut pada himpunan simpul $V = \\{1, 2, 3, 4\\}$:\n\n[VISUAL:DIGRAF:4nodes:edges:1-1,1-3,2-1,2-3,2-4,3-1,3-2,4-1]\n\nBerdasarkan digraf di atas, manakah himpunan pasangan terurut relasi $R$ yang tepat?",
     "options": [
       {
         "key": "A",
-        "text": "$\\binom{8}{7}$"
+        "text": "$R = \\{(1,1), (1,3), (2,1), (2,3), (2,4), (3,1), (3,2), (4,1)\\}$"
       },
       {
         "key": "B",
-        "text": "$\\binom{9}{3}$"
+        "text": "$R = \\{(1,2), (2,3), (3,4), (4,1), (1,1)\\}$"
       },
       {
         "key": "C",
-        "text": "$\\binom{9}{4}$"
+        "text": "$R = \\{(1,3), (2,1), (2,4), (3,2), (4,1)\\}$"
       },
       {
         "key": "D",
-        "text": "$\\binom{16}{7}$"
+        "text": "$R = \\{(1,1), (2,2), (3,3), (4,4), (1,3), (3,1)\\}$"
       },
       {
         "key": "E",
-        "text": "$\\binom{9}{5}$"
+        "text": "$R = \\{(1,4), (2,3), (3,2), (4,1)\\}$"
       }
     ],
-    "correct_answer": "C",
-    "explanation": "Identitas Pascal menyatakan bahwa untuk semua bilangan bulat positif $n$ dan $k$ dengan $n \\ge k$:\\n$\\binom{n}{k-1} + \\binom{n}{k} = \\binom{n+1}{k}$.\\nDi sini $n = 8$ dan $k = 4$, sehingga:\\n$\\binom{8}{3} + \\binom{8}{4} = \\binom{9}{4}$.",
-    "created_at": "2026-10-30T04:48:53.195176+00:00"
+    "correct_answer": "A",
+    "explanation": "Mari telusuri busur panah dari setiap simpul pada digraf:\n- Simpul 1: memiliki self-loop ke dirinya sendiri $(1, 1)$ dan busur ke 3 $(1, 3)$.\n- Simpul 2: memiliki 3 busur keluar, yaitu ke 1 $(2, 1)$, ke 3 $(2, 3)$, dan ke 4 $(2, 4)$.\n- Simpul 3: memiliki busur ke 1 $(3, 1)$ dan busur ke 2 $(3, 2)$.\n- Simpul 4: memiliki busur keluar ke 1 $(4, 1)$.\nTotal pasangan pada relasi $R$ adalah $\\{(1,1), (1,3), (2,1), (2,3), (2,4), (3,1), (3,2), (4,1)\\}$.",
+    "created_at": "2026-10-30T05:28:29.568378+00:00"
   },
   {
     "id": "c4545d10-970f-4afb-ad85-7bd1f800c152",
@@ -1906,33 +1936,33 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T05:28:29.568378+00:00"
   },
   {
-    "id": "28028413-d423-481d-8d25-b09dde48dcd2",
-    "topic": "Relasi Bagian 1",
-    "question": "Perhatikan graf berarah (digraf) berikut pada himpunan simpul $V = \\{1, 2, 3, 4\\}$:\n\n[VISUAL:DIGRAF:4nodes:edges:1-1,1-3,2-1,2-3,2-4,3-1,3-2,4-1]\n\nBerdasarkan digraf di atas, manakah himpunan pasangan terurut relasi $R$ yang tepat?",
+    "id": "e289bd47-7b06-43a7-b3a6-7d846ac21625",
+    "topic": "Relasi Bagian 2",
+    "question": "Diketahui relasi $R$ pada himpunan $\\{1, 2, 3\\}$ memiliki matriks representasi $M_R = \\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix}$. Matriks representasi dari komposisi relasi dengan dirinya sendiri, $M_{R^2} = M_R \\odot M_R$, adalah:",
     "options": [
       {
         "key": "A",
-        "text": "$R = \\{(1,1), (1,3), (2,1), (2,3), (2,4), (3,1), (3,2), (4,1)\\}$"
+        "text": "$\\begin{pmatrix} 0 & 0 & 1 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$"
       },
       {
         "key": "B",
-        "text": "$R = \\{(1,2), (2,3), (3,4), (4,1), (1,1)\\}$"
+        "text": "$\\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix}$"
       },
       {
         "key": "C",
-        "text": "$R = \\{(1,3), (2,1), (2,4), (3,2), (4,1)\\}$"
+        "text": "$\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
       },
       {
         "key": "D",
-        "text": "$R = \\{(1,1), (2,2), (3,3), (4,4), (1,3), (3,1)\\}$"
+        "text": "$\\begin{pmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$"
       },
       {
         "key": "E",
-        "text": "$R = \\{(1,4), (2,3), (3,2), (4,1)\\}$"
+        "text": "$\\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
       }
     ],
     "correct_answer": "A",
-    "explanation": "Mari telusuri busur panah dari setiap simpul pada digraf:\n- Simpul 1: memiliki self-loop ke dirinya sendiri $(1, 1)$ dan busur ke 3 $(1, 3)$.\n- Simpul 2: memiliki 3 busur keluar, yaitu ke 1 $(2, 1)$, ke 3 $(2, 3)$, dan ke 4 $(2, 4)$.\n- Simpul 3: memiliki busur ke 1 $(3, 1)$ dan busur ke 2 $(3, 2)$.\n- Simpul 4: memiliki busur keluar ke 1 $(4, 1)$.\nTotal pasangan pada relasi $R$ adalah $\\{(1,1), (1,3), (2,1), (2,3), (2,4), (3,1), (3,2), (4,1)\\}$.",
+    "explanation": "Perkalian boolean $M_R \\odot M_R$:\nRelasi $R = \\{(1, 2), (2, 3)\\}$.\nRantai jalan dengan panjang 2 menghubungkan $1 \\to 2 \\to 3$, yang berarti $(1, 3) \\in R^2$. Tidak ada rantai panjang 2 lainnya.\nOleh karena itu, satu-satunya elemen bernilai 1 pada $M_{R^2}$ adalah pada posisi baris 1 kolom 3 ($m_{13} = 1$), sedangkan posisi lainnya 0:\n$M_{R^2} = \\begin{pmatrix} 0 & 0 & 1 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$.",
     "created_at": "2026-10-30T05:28:29.568378+00:00"
   },
   {
@@ -1996,33 +2026,1023 @@ export const DEFAULT_QUESTIONS: QuestionItem[] = [
     "created_at": "2026-10-30T05:28:29.568378+00:00"
   },
   {
-    "id": "e289bd47-7b06-43a7-b3a6-7d846ac21625",
-    "topic": "Relasi Bagian 2",
-    "question": "Diketahui relasi $R$ pada himpunan $\\{1, 2, 3\\}$ memiliki matriks representasi $M_R = \\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix}$. Matriks representasi dari komposisi relasi dengan dirinya sendiri, $M_{R^2} = M_R \\odot M_R$, adalah:",
+    "id": "72e74a91-0aab-4248-b216-25afeae65c35",
+    "topic": "Relasi Rekurensi",
+    "question": "Pada persoalan Menara Hanoi dengan $n$ buah piringan, relasi rekurensi untuk jumlah langkah minimum $H_n$ adalah $H_n = 2H_{n-1} + 1$ dengan $H_1 = 1$. Berapakah rumus solusi tertutup (*closed-form*) untuk $H_n$?",
     "options": [
       {
         "key": "A",
-        "text": "$\\begin{pmatrix} 0 & 0 & 1 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$"
+        "text": "$H_n = 2^n$"
       },
       {
         "key": "B",
-        "text": "$\\begin{pmatrix} 0 & 1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix}$"
+        "text": "$H_n = 2^n - 1$"
       },
       {
         "key": "C",
-        "text": "$\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
+        "text": "$H_n = 2^{n-1} + 1$"
       },
       {
         "key": "D",
-        "text": "$\\begin{pmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$"
+        "text": "$H_n = n^2 - 1$"
       },
       {
         "key": "E",
-        "text": "$\\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
+        "text": "$H_n = 2^{n+1} - 1$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Dengan metode iterasi (ekspansi bertingkat):\n$H_1 = 1 = 2^1 - 1$\n$H_2 = 2(1) + 1 = 3 = 2^2 - 1$\n$H_3 = 2(3) + 1 = 7 = 2^3 - 1$\nSecara umum $H_n = 2^n - 1$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "507377b7-9c33-4176-8053-5b134a272c3a",
+    "topic": "Relasi Rekurensi",
+    "question": "Akar-akar dari persamaan karakteristik $r^2 - 5r + 6 = 0$ adalah $r_1 = 2$ dan $r_2 = 3$. Jika kondisi awal adalah $a_0 = 1$ dan $a_1 = 4$, berapakah nilai dari $a_2$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$10$"
+      },
+      {
+        "key": "B",
+        "text": "$14$"
+      },
+      {
+        "key": "C",
+        "text": "$16$"
+      },
+      {
+        "key": "D",
+        "text": "$18$"
+      },
+      {
+        "key": "E",
+        "text": "$20$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Gunakan langsung rumus relasi rekurensi: $a_n = 5a_{n-1} - 6a_{n-2}$.\nUntuk $n = 2$:\n$a_2 = 5a_1 - 6a_0 = 5(4) - 6(1) = 20 - 6 = 14$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "588fce2f-e8b3-40fe-a2b2-7bb8c1457d74",
+    "topic": "Relasi Rekurensi",
+    "question": "Diberikan relasi rekurensi linier homogen: $a_n = 5a_{n-1} - 6a_{n-2}$ untuk $n \\ge 2$. Persamaan karakteristik dari relasi tersebut adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$r^2 - 5r - 6 = 0$"
+      },
+      {
+        "key": "B",
+        "text": "$r^2 + 5r - 6 = 0$"
+      },
+      {
+        "key": "C",
+        "text": "$r^2 - 5r + 6 = 0$"
+      },
+      {
+        "key": "D",
+        "text": "$r^2 + 5r + 6 = 0$"
+      },
+      {
+        "key": "E",
+        "text": "$r^2 - 6r + 5 = 0$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Bentuk umum rekurensi linier berorde 2: $a_n - c_1 a_{n-1} - c_2 a_{n-2} = 0$. Substitusikan $a_n = r^n$:\n$r^n - 5r^{n-1} + 6r^{n-2} = 0 \\implies r^2 - 5r + 6 = 0$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "737ba5c7-fbab-4fa3-9d94-5a00508782b5",
+    "topic": "Fungsi",
+    "question": "Jika fungsi $f: A \\to B$ dan $g: B \\to C$ keduanya adalah fungsi surjektif (onto), maka fungsi komposisi $g \\circ f: A \\to C$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Pasti surjektif"
+      },
+      {
+        "key": "B",
+        "text": "Pasti injektif"
+      },
+      {
+        "key": "C",
+        "text": "Belum tentu terdefinisi"
+      },
+      {
+        "key": "D",
+        "text": "Pasti bijektif"
+      },
+      {
+        "key": "E",
+        "text": "Konstan"
       }
     ],
     "correct_answer": "A",
-    "explanation": "Perkalian boolean $M_R \\odot M_R$:\nRelasi $R = \\{(1, 2), (2, 3)\\}$.\nRantai jalan dengan panjang 2 menghubungkan $1 \\to 2 \\to 3$, yang berarti $(1, 3) \\in R^2$. Tidak ada rantai panjang 2 lainnya.\nOleh karena itu, satu-satunya elemen bernilai 1 pada $M_{R^2}$ adalah pada posisi baris 1 kolom 3 ($m_{13} = 1$), sedangkan posisi lainnya 0:\n$M_{R^2} = \\begin{pmatrix} 0 & 0 & 1 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$.",
-    "created_at": "2026-10-30T05:28:29.568378+00:00"
+    "explanation": "Sifat komposisi fungsi: Komposisi dari dua fungsi surjektif selalu menghasilkan fungsi surjektif. Untuk setiap $c \\in C$, karena $g$ surjektif terdapat $b \\in B$ dengan $g(b) = c$. Karena $f$ surjektif, terdapat $a \\in A$ dengan $f(a) = b$. Maka $(g \\circ f)(a) = g(f(a)) = g(b) = c$, membuktikan $g \\circ f$ surjektif.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "3b823ce8-3065-4584-b5b1-bbf0bac6a7ea",
+    "topic": "Fungsi",
+    "question": "Berapakah banyaknya fungsi injektif (one-to-one) yang dapat dibentuk dari himpunan $A = \\{1, 2, 3\\}$ ke himpunan $B = \\{a, b, c, d, e\\}$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$15$"
+      },
+      {
+        "key": "B",
+        "text": "$60$"
+      },
+      {
+        "key": "C",
+        "text": "$125$"
+      },
+      {
+        "key": "D",
+        "text": "$243$"
+      },
+      {
+        "key": "E",
+        "text": "$10$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Banyaknya fungsi injektif dari himpunan berukuran $m$ ke himpunan berukuran $n$ ($m \\le n$) adalah permutasi $P(n, m) = \\frac{n!}{(n - m)!}$.\nDi sini $m = |A| = 3$ dan $n = |B| = 5$, maka:\n$P(5, 3) = 5 \\times 4 \\times 3 = 60$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "98725c19-eda0-4415-b543-1d93df6493e9",
+    "topic": "Fungsi",
+    "question": "Fungsi manakah dari himpunan bilangan bulat $\\mathbb{Z}$ ke $\\mathbb{Z}$ yang bersifat **bijektif** (satu-ke-satu dan pada)?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(x) = x^2$"
+      },
+      {
+        "key": "B",
+        "text": "$f(x) = 2x$"
+      },
+      {
+        "key": "C",
+        "text": "$f(x) = x + 5$"
+      },
+      {
+        "key": "D",
+        "text": "$f(x) = |x|$"
+      },
+      {
+        "key": "E",
+        "text": "$f(x) = x^3 - x$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "$f(x) = x + 5$ bersifat bijektif karena:\n1. Injektif: $x_1 + 5 = x_2 + 5 \\implies x_1 = x_2$.\n2. Surjektif: Untuk sembarang $y \\in \\mathbb{Z}$, ada $x = y - 5 \\in \\mathbb{Z}$ sedemikian sehingga $f(x) = y$.\nSebaliknya, $f(x) = 2x$ tidak surjektif karena bilangan ganjil tidak punya prapeta di $\\mathbb{Z}$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "b4144671-26f1-4bd2-a629-fbd82142307d",
+    "topic": "Fungsi",
+    "question": "Diketahui fungsi $f: \\mathbb{R} \\to \\mathbb{R}$ dengan rumus $f(x) = 2x - 3$, dan $g: \\mathbb{R} \\to \\mathbb{R}$ dengan rumus $g(x) = x^2 + 1$. Rumus fungsi komposisi $(f \\circ g)(x)$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$2x^2 - 1$"
+      },
+      {
+        "key": "B",
+        "text": "$4x^2 - 12x + 10$"
+      },
+      {
+        "key": "C",
+        "text": "$2x^2 - 5$"
+      },
+      {
+        "key": "D",
+        "text": "$x^2 + 2x - 2$"
+      },
+      {
+        "key": "E",
+        "text": "$2x^2 + 1$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Komposisi $(f \\circ g)(x) = f(g(x)) = f(x^2 + 1) = 2(x^2 + 1) - 3 = 2x^2 + 2 - 3 = 2x^2 - 1$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "27aa7606-01bc-4646-8d09-b81d93015529",
+    "topic": "Fungsi",
+    "question": "Nilai dari fungsi ceiling $\\lceil -3.7 \\rceil + \\lfloor 4.9 \\rfloor$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$0$"
+      },
+      {
+        "key": "B",
+        "text": "$1$"
+      },
+      {
+        "key": "C",
+        "text": "$-1$"
+      },
+      {
+        "key": "D",
+        "text": "$2$"
+      },
+      {
+        "key": "E",
+        "text": "$-2$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fungsi ceiling $\\lceil x \\rceil$ adalah bilangan bulat terkecil yang lebih besar atau sama dengan $x$. Maka $\\lceil -3.7 \\rceil = -3$.\nFungsi floor $\\lfloor x \\rfloor$ adalah bilangan bulat terbesar yang lebih kecil atau sama dengan $x$. Maka $\\lfloor 4.9 \\rfloor = 4$.\nJumlahnya: $-3 + 4 = 1$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "c08bf234-37c5-4907-a4bf-45efc6a82071",
+    "topic": "Relasi Bagian 2",
+    "question": "Suatu POSET $(A, \\le)$ disebut **terurut total (total order / chain)** jika memenuhi syarat tambahan berikut:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Untuk setiap $a, b \\in A$, berlaku $a \\le b$ atau $b \\le a$ (semua elemen dapat dibandingkan)"
+      },
+      {
+        "key": "B",
+        "text": "Tidak ada elemen maksimal di dalam $A$"
+      },
+      {
+        "key": "C",
+        "text": "Himpunan $A$ haruslah terhingga (finite)"
+      },
+      {
+        "key": "D",
+        "text": "Relasinya harus simetris sekaligus antisimetris"
+      },
+      {
+        "key": "E",
+        "text": "Setiap subset tak kosong memiliki elemen batas atas"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "POSET disebut terurut total (rantai / chain) jika tidak ada pasangan elemen yang tidak dapat dibandingkan (*incomparable*). Secara formal: $\\forall a, b \\in A, (a \\le b \\lor b \\le a)$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "fb8cd4f6-e2d7-4605-8210-01f0d9e16310",
+    "topic": "Relasi Bagian 2",
+    "question": "Kapan suatu Himpunan Terurut Parsial (POSET) disebut sebagai **Lattice (Kisi)**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Jika memiliki tepat satu elemen maksimal dan satu elemen minimal"
+      },
+      {
+        "key": "B",
+        "text": "Jika setiap pasang elemen di dalamnya memiliki batas atas terkecil (lub) dan batas bawah terbesar (glb)"
+      },
+      {
+        "key": "C",
+        "text": "Jika diagram Hasse-nya tidak memiliki cabang silang"
+      },
+      {
+        "key": "D",
+        "text": "Jika setiap dua elemen dapat saling dibandingkan (total order)"
+      },
+      {
+        "key": "E",
+        "text": "Jika kardinalitas himpunannya selalu genap"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Definisi Lattice: Suatu POSET $(L, \\le)$ disebut kisi (lattice) jika untuk setiap pasang elemen $a, b \\in L$, terdapat batas atas terkecil (least upper bound / join $\\sup(a, b)$) dan batas bawah terbesar (greatest lower bound / meet $\\inf(a, b)$).",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "be9362c9-8d3f-4ae8-996e-04f42aedbcff",
+    "topic": "Relasi Bagian 2",
+    "question": "Diberikan POSET $(D_{30}, \\mid)$ yaitu himpunan pembagi positif dari 30: $D_{30} = \\{1, 2, 3, 5, 6, 10, 15, 30\\}$. Nilai dari $\\text{lub}\\{4, 6\\}$ jika diganti dengan $\\text{lub}\\{6, 10\\}$ (least upper bound / batas atas terkecil) pada POSET tersebut adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$1$"
+      },
+      {
+        "key": "B",
+        "text": "$2$"
+      },
+      {
+        "key": "C",
+        "text": "$15$"
+      },
+      {
+        "key": "D",
+        "text": "$30$"
+      },
+      {
+        "key": "E",
+        "text": "$60$"
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "Pada relasi pembagian $(D_n, \\mid)$, operasi $\\text{lub}(a, b)$ adalah Kelipatan Persekutuan Terkecil (KPK atau $\\text{lcm}(a, b)$). $\\text{lcm}(6, 10) = 30$. Karena $30 \\in D_{30}$, maka $\\text{lub}\\{6, 10\\} = 30$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "4e8b3938-1f0c-4edc-82dc-92a897b6c5c4",
+    "topic": "Relasi Bagian 2",
+    "question": "Pada POSET $(A, \\mid)$ dengan $A = \\{2, 3, 4, 6, 8, 12, 24\\}$, berapakah elemen terbesar (greatest element) dari POSET tersebut?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Tidak ada elemen terbesar"
+      },
+      {
+        "key": "B",
+        "text": "$12$"
+      },
+      {
+        "key": "C",
+        "text": "$24$"
+      },
+      {
+        "key": "D",
+        "text": "$8$"
+      },
+      {
+        "key": "E",
+        "text": "$2$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Elemen $g \\in A$ disebut elemen terbesar jika untuk setiap $x \\in A$ berlaku $x \\mid g$. Bilangan $24$ dapat dibagi habis oleh semua elemen lain dalam himpunan $A$ ($2, 3, 4, 6, 8, 12 \\mid 24$). Jadi, $24$ adalah elemen terbesar (greatest element).",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "084ba9fc-2f8c-47d9-bdc5-465f17081302",
+    "topic": "Relasi Bagian 2",
+    "question": "Diberikan POSET $(A, \\mid)$ dengan $A = \\{2, 3, 4, 6, 8, 12, 24\\}$ dan relasi pembagian habis ($a \\mid b$). Manakah elemen-elemen minimal dari POSET tersebut?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\{2\\}$ saja"
+      },
+      {
+        "key": "B",
+        "text": "$\\{2, 3\\}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\{24\\}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\{4, 6\\}$"
+      },
+      {
+        "key": "E",
+        "text": "Tidak ada elemen minimal"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Elemen $x \\in A$ disebut minimal jika tidak ada elemen $y \\in A$ ($y \\ne x$) sedemikian sehingga $y \\mid x$. Pada himpunan $A$, bilangan $2$ dan $3$ tidak memiliki pembagi sejati lain yang ada di $A$. Oleh karena itu, elemen minimalnya adalah $\\{2, 3\\}$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "03440d48-4650-4449-9f10-1236d219be0d",
+    "topic": "Relasi Bagian 1",
+    "question": "Diberikan himpunan $A = \\{1, 2, 3\\}$. Berapakah banyaknya relasi ekuivalensi yang berbeda yang dapat dibentuk pada himpunan $A$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$3$"
+      },
+      {
+        "key": "B",
+        "text": "$4$"
+      },
+      {
+        "key": "C",
+        "text": "$5$"
+      },
+      {
+        "key": "D",
+        "text": "$8$"
+      },
+      {
+        "key": "E",
+        "text": "$15$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Banyaknya relasi ekuivalensi pada himpunan dengan $n$ elemen sama dengan bilangan Bell $B_n$, yang menghitung jumlah partisi himpunan tersebut.\nUntuk $n = 3$, partisi dari $\\{1, 2, 3\\}$ adalah:\n1. $\\{\\{1\\}, \\{2\\}, \\{3\\}\\}$\n2. $\\{\\{1, 2\\}, \\{3\\}\\}$\n3. $\\{\\{1, 3\\}, \\{2\\}\\}$\n4. $\\{\\{2, 3\\}, \\{1\\}\\}$\n5. $\\{\\{1, 2, 3\\}\\}$\nMaka $B_3 = 5$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "5d29918c-5d19-4546-9f17-a57d3562a6f2",
+    "topic": "Relasi Bagian 1",
+    "question": "Relasi kongruensi modulo $m$ didefinisikan pada himpunan bilangan bulat $\\mathbb{Z}$ dengan $a \\equiv b \\pmod{m} \\iff m \\mid (a - b)$. Sifat relasi apakah yang dimiliki oleh relasi kongruensi ini?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Hanya refleksif dan transitif"
+      },
+      {
+        "key": "B",
+        "text": "Relasi pengurutan parsial (POSET)"
+      },
+      {
+        "key": "C",
+        "text": "Relasi ekuivalensi (refleksif, simetris, dan transitif)"
+      },
+      {
+        "key": "D",
+        "text": "Refleksif dan antisimetris"
+      },
+      {
+        "key": "E",
+        "text": "Asimetris dan transitif"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Relasi kongruensi modulo $m$ memenuhi:\n1. Refleksif: $a - a = 0 = 0 \\cdot m$, maka $a \\equiv a \\pmod{m}$.\n2. Simetris: Jika $m \\mid (a - b)$, maka $m \\mid -(a - b) = (b - a)$, sehingga $b \\equiv a \\pmod{m}$.\n3. Transitif: Jika $m \\mid (a - b)$ dan $m \\mid (b - c)$, maka $m \\mid [(a - b) + (b - c)] = (a - c)$, sehingga $a \\equiv c \\pmod{m}$.\nKarena memenuhi ketiga sifat tersebut, kongruensi modulo $m$ adalah relasi ekuivalensi.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "160342e6-f8ae-494e-9b60-3a509ce35ed8",
+    "topic": "Relasi Bagian 1",
+    "question": "Misalkan $R$ dan $S$ adalah dua relasi pada himpunan $A = \\{1, 2, 3\\}$, dengan $R = \\{(1, 2), (2, 3)\\}$ dan $S = \\{(2, 1), (3, 2)\\}$. Manakah komposisi relasi $S \\circ R$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\{(1, 1), (2, 2)\\}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\{(2, 2), (3, 3)\\}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\{(1, 2), (2, 3)\\}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\{(1, 3), (2, 1)\\}$"
+      },
+      {
+        "key": "E",
+        "text": "$\\emptyset$ (relasi kosong)"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Definisi komposisi relasi $S \\circ R$: $(a, c) \\in S \\circ R \\iff \\exists b \\text{ sedemikian sehingga } (a, b) \\in R \\text{ dan } (b, c) \\in S$.\n- Dari $(1, 2) \\in R$ dan $(2, 1) \\in S$, didapat $(1, 1) \\in S \\circ R$.\n- Dari $(2, 3) \\in R$ dan $(3, 2) \\in S$, didapat $(2, 2) \\in S \\circ R$.\nSehingga $S \\circ R = \\{(1, 1), (2, 2)\\}$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "3e5eb4b3-e39c-47f6-94d1-3cc94ad19720",
+    "topic": "Relasi Bagian 1",
+    "question": "Diberikan relasi $R = \\{(1, 2), (2, 3), (3, 1)\\}$ pada himpunan $A = \\{1, 2, 3\\}$. Manakah klosur simetris (symmetric closure) dari relasi $R$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\{(1, 2), (2, 1), (2, 3), (3, 2)\\}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\{(1, 2), (2, 3), (3, 1), (2, 1), (3, 2), (1, 3)\\}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\{(1, 1), (2, 2), (3, 3), (1, 2), (2, 3), (3, 1)\\}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\{(1, 3), (2, 1), (3, 2)\\}$"
+      },
+      {
+        "key": "E",
+        "text": "$\\{(1, 1), (2, 2), (3, 3)\\}$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Klosur simetris dari suatu relasi $R$ diperoleh dengan menggabungkan relasi $R$ dengan inversnya, yaitu $R \\cup R^{-1}$. Karena $R^{-1} = \\{(2, 1), (3, 2), (1, 3)\\}$, maka klosur simetrisnya adalah gabungan semua pasangan tersebut: $\\{(1, 2), (2, 3), (3, 1), (2, 1), (3, 2), (1, 3)\\}$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "fababf56-95da-4f8c-a6ff-aa5f6a9a4153",
+    "topic": "Relasi Bagian 1",
+    "question": "Diberikan himpunan $A = \\{1, 2, 3, 4\\}$ dan relasi $R = \\{(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (4, 4)\\}$. Relasi $R$ merupakan relasi ekuivalensi. Manakah kelas ekuivalensi $[1]$ dari relasi tersebut?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\{1\\}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\{1, 2\\}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\{1, 2, 3\\}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\{1, 2, 3, 4\\}$"
+      },
+      {
+        "key": "E",
+        "text": "$\\{2\\}$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Kelas ekuivalensi dari elemen $a$, dinotasikan $[a]$, adalah himpunan semua elemen $x \\in A$ sedemikian sehingga $(a, x) \\in R$. Pasangan dalam $R$ yang berpasangan dengan 1 adalah $(1, 1)$ dan $(1, 2)$. Maka $[1] = \\{1, 2\\}$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "6e8aae6f-0c5d-4ed5-b222-3e7b85bfcf05",
+    "topic": "Permutasi dan Kombinasi",
+    "question": "Berapakah koefisien dari suku $x^3 y^4$ pada ekspansi binomial $(2x - y)^7$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$280$"
+      },
+      {
+        "key": "B",
+        "text": "$-280$"
+      },
+      {
+        "key": "C",
+        "text": "$35$"
+      },
+      {
+        "key": "D",
+        "text": "$-35$"
+      },
+      {
+        "key": "E",
+        "text": "$560$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Menurut Teorema Binomial, suku umum dari $(a + b)^n$ adalah $\\binom{n}{k} a^{n-k} b^k$.\nDi sini $a = 2x, b = -y, n = 7$, dan kita mencari suku dengan $x^3 y^4$ ($k = 4$):\n$\\binom{7}{4} (2x)^3 (-y)^4 = 35 \\times (8x^3) \\times (y^4) = 280 x^3 y^4$.\nMaka koefisiennya adalah $280$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "e8a27271-8b17-47e6-993a-6ec25ca45aad",
+    "topic": "Permutasi dan Kombinasi",
+    "question": "Sebanyak 6 orang sahabat akan duduk mengelilingi sebuah meja bundar. Berapakah banyaknya susunan duduk melingkar yang berbeda dari keenam orang tersebut?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$720$"
+      },
+      {
+        "key": "B",
+        "text": "$360$"
+      },
+      {
+        "key": "C",
+        "text": "$120$"
+      },
+      {
+        "key": "D",
+        "text": "$24$"
+      },
+      {
+        "key": "E",
+        "text": "$60$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Banyaknya permutasi siklis (melingkar) dari $n$ objek adalah $(n - 1)!$.\nUntuk $n = 6$:\n$P_{\\text{siklis}} = (6 - 1)! = 5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$ susunan.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "8178072e-f86f-4824-a6fd-ec689e3b044b",
+    "topic": "Permutasi dan Kombinasi",
+    "question": "Berapa banyak solusi bilangan bulat tak negatif $(x_1, x_2, x_3, x_4)$ yang memenuhi persamaan linier $x_1 + x_2 + x_3 + x_4 = 10$ dengan $x_i \\ge 0$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$220$"
+      },
+      {
+        "key": "B",
+        "text": "$286$"
+      },
+      {
+        "key": "C",
+        "text": "$715$"
+      },
+      {
+        "key": "D",
+        "text": "$120$"
+      },
+      {
+        "key": "E",
+        "text": "$1000$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Menggunakan metode *Stars and Bars* (kombinasi dengan pengulangan): jumlah solusi bilangan bulat tak negatif dari $x_1 + x_2 + \\dots + x_k = n$ adalah:\n$\\binom{n + k - 1}{k - 1} = \\binom{n + k - 1}{n}$.\nDi sini $n = 10$ dan $k = 4$, maka:\n$\\binom{10 + 4 - 1}{4 - 1} = \\binom{13}{3} = \\frac{13 \\times 12 \\times 11}{3 \\times 2 \\times 1} = 286$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "cbd7a1e9-68cb-472f-8e19-e417f02d7be0",
+    "topic": "Permutasi dan Kombinasi",
+    "question": "Sebuah panitia yang terdiri dari 4 orang akan dipilih dari 6 pria dan 5 wanita. Berapa banyak cara memilih panitia tersebut jika harus terdiri dari **tepat 2 pria dan 2 wanita**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$150$"
+      },
+      {
+        "key": "B",
+        "text": "$120$"
+      },
+      {
+        "key": "C",
+        "text": "$330$"
+      },
+      {
+        "key": "D",
+        "text": "$100$"
+      },
+      {
+        "key": "E",
+        "text": "$75$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Memilih 2 pria dari 6 pria: $\\binom{6}{2} = \\frac{6 \\times 5}{2} = 15$.\nMemilih 2 wanita dari 5 wanita: $\\binom{5}{2} = \\frac{5 \\times 4}{2} = 10$.\nBerdasarkan aturan perkalian: $15 \\times 10 = 150$ cara.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "460f3fe2-dc8c-4a14-b05e-cba67a89f04f",
+    "topic": "Permutasi dan Kombinasi",
+    "question": "Berapakah banyaknya susunan berbeda yang dapat dibentuk dari semua huruf pada kata **'MATEMATIKA'**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$75.600$"
+      },
+      {
+        "key": "B",
+        "text": "$151.200$"
+      },
+      {
+        "key": "C",
+        "text": "$302.400$"
+      },
+      {
+        "key": "D",
+        "text": "$3.628.800$"
+      },
+      {
+        "key": "E",
+        "text": "$50.400$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Kata 'MATEMATIKA' memiliki total 10 huruf:\n- M = 2 buah\n- A = 3 buah\n- T = 2 buah\n- E = 1 buah\n- I = 1 buah\n- K = 1 buah\nRumus permutasi dengan elemen berulang:\n$P = \\frac{10!}{2! \\times 3! \\times 2! \\times 1! \\times 1! \\times 1!} = \\frac{3.628.800}{2 \\times 6 \\times 2} = \\frac{3.628.800}{24} = 151.200$ susunan.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "398d9756-7ebf-4eae-a56b-c09393357a45",
+    "topic": "Prinsip Sarang Merpati",
+    "question": "Jika kita memilih $n$ buah bilangan dari himpunan $\\{1, 2, 3, 4, 5, 6, 7, 8\\}$, berapakah nilai $n$ terkecil agar dijamin setidaknya ada **sepasang bilangan yang berjumlah 9**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$4$"
+      },
+      {
+        "key": "B",
+        "text": "$5$"
+      },
+      {
+        "key": "C",
+        "text": "$6$"
+      },
+      {
+        "key": "D",
+        "text": "$7$"
+      },
+      {
+        "key": "E",
+        "text": "$8$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bagi elemen-elemen himpunan menjadi 4 pasang yang berjumlah 9:\n$\\{1, 8\\}, \\{2, 7\\}, \\{3, 6\\}, \\{4, 5\\}$ (4 sarang).\nJika kita mengambil 4 bilangan, mungkin saja kita mengambil satu dari tiap pasangan (misal $\\{1, 2, 3, 4\\}$). Namun jika kita mengambil $4 + 1 = 5$ bilangan, menurut PHP pasti ada 2 bilangan yang berasal dari kelompok yang sama sehingga jumlahnya pasti 9.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "1020e725-7c07-482b-8b6b-5c4293e980e2",
+    "topic": "Prinsip Sarang Merpati",
+    "question": "Diberikan sebuah persegi dengan panjang sisi 2 unit. Jika 5 buah titik diletakkan di dalam atau pada batas persegi tersebut, berapakah jarak maksimum terkecil yang dijamin memisahkan setidaknya dua buah titik?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sqrt{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$1$"
+      },
+      {
+        "key": "C",
+        "text": "$2$"
+      },
+      {
+        "key": "D",
+        "text": "$\\sqrt{3}$"
+      },
+      {
+        "key": "E",
+        "text": "$2\\sqrt{2}$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Bagi persegi berukuran $2 \\times 2$ menjadi 4 buah sub-persegi berukuran $1 \\times 1$ (4 sarang). Jika terdapat 5 titik (merpati), menurut PHP pasti ada 1 sub-persegi yang memuat setidaknya 2 titik. Jarak terjauh antara dua titik dalam persegi $1 \\times 1$ adalah panjang diagonalnya, yaitu $\\sqrt{1^2 + 1^2} = \\sqrt{2}$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "997b857a-e0c8-4e7f-985c-4cc970ed3c80",
+    "topic": "Prinsip Sarang Merpati",
+    "question": "Berapakah jumlah minimum mahasiswa yang harus terdaftar dalam suatu kelas mata kuliah agar dijamin setidaknya ada **5 orang mahasiswa yang lahir pada bulan yang sama**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$48$"
+      },
+      {
+        "key": "B",
+        "text": "$49$"
+      },
+      {
+        "key": "C",
+        "text": "$50$"
+      },
+      {
+        "key": "D",
+        "text": "$60$"
+      },
+      {
+        "key": "E",
+        "text": "$61$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Terdapat $k = 12$ bulan dalam setahun (sarang). Kita ingin dijamin ada 5 mahasiswa dalam bulan yang sama, yaitu $\\lceil N/12 \\rceil = 5$.\nNilai $N$ terkecil adalah $N = 12 \\times (5 - 1) + 1 = 12 \\times 4 + 1 = 49$ orang.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "9283d122-730e-406b-b51e-a80a1857d9f9",
+    "topic": "Aturan Dasar Berhitung",
+    "question": "Berapa banyak cara memilih perwakilan yang terdiri dari 1 dosen atau 1 mahasiswa jika tersedia 8 dosen dan 40 mahasiswa?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$320$"
+      },
+      {
+        "key": "B",
+        "text": "$48$"
+      },
+      {
+        "key": "C",
+        "text": "$40$"
+      },
+      {
+        "key": "D",
+        "text": "$8$"
+      },
+      {
+        "key": "E",
+        "text": "$256$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Karena pemilihan bersifat saling lepas (*mutually exclusive*) — memilih 1 dosen ATAU 1 mahasiswa — maka berlaku aturan penjumlahan (Sum Rule):\nTotal = $8 + 40 = 48$ cara.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "8d0c72eb-adf2-4d4d-93f0-d7029427274a",
+    "topic": "Prinsip Sarang Merpati",
+    "question": "Dalam sebuah laci terdapat 10 kaos kaki hitam dan 10 kaos kaki putih yang tercampur aduk dalam kegelapan. Berapakah jumlah minimum kaos kaki yang harus diambil agar dijamin diperoleh **setidaknya satu pasang kaos kaki yang sewarna**?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$2$"
+      },
+      {
+        "key": "B",
+        "text": "$3$"
+      },
+      {
+        "key": "C",
+        "text": "$11$"
+      },
+      {
+        "key": "D",
+        "text": "$12$"
+      },
+      {
+        "key": "E",
+        "text": "$20$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Terdapat $k = 2$ warna kaos kaki (sarang). Menurut Prinsip Sarang Merpati, jika diambil $k + 1 = 2 + 1 = 3$ kaos kaki, pasti ada setidaknya $\\lceil 3/2 \\rceil = 2$ kaos kaki yang berasal dari warna yang sama (sepasang sewarna).",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "b27ea9bf-72f2-4291-b530-c317e382036e",
+    "topic": "Aturan Dasar Berhitung",
+    "question": "Berapakah banyaknya bilangan ganjil 3-digit yang dapat dibentuk dari angka-angka $\\{1, 2, 3, 4, 5, 6\\}$ jika tidak boleh ada angka yang berulang?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$60$"
+      },
+      {
+        "key": "B",
+        "text": "$90$"
+      },
+      {
+        "key": "C",
+        "text": "$120$"
+      },
+      {
+        "key": "D",
+        "text": "$72$"
+      },
+      {
+        "key": "E",
+        "text": "$48$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Syarat bilangan ganjil: digit satuan harus ganjil (1, 3, atau 5 $\\implies 3$ pilihan).\nDigit ratusan: dari 6 angka, 1 sudah dipakai untuk satuan $\\implies 5$ pilihan tersisa.\nDigit puluhan: 2 angka sudah dipakai $\\implies 4$ pilihan tersisa.\nMaka total kemungkinan bilangan ganjil: $5 \\times 4 \\times 3 = 60$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "aa8a8857-8acb-4492-be53-d5561e69cf7d",
+    "topic": "Aturan Dasar Berhitung",
+    "question": "Dalam sebuah survei terhadap 50 mahasiswa Informatika, 30 orang menguasai Python, 25 orang menguasai C++, dan 10 orang menguasai keduanya. Berapa orang mahasiswa yang **tidak menguasai satupun** dari kedua bahasa tersebut?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$0$"
+      },
+      {
+        "key": "B",
+        "text": "$5$"
+      },
+      {
+        "key": "C",
+        "text": "$10$"
+      },
+      {
+        "key": "D",
+        "text": "$15$"
+      },
+      {
+        "key": "E",
+        "text": "$20$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Jumlah mahasiswa yang menguasai setidaknya satu bahasa:\n$|P \\cup C| = |P| + |C| - |P \\cap C| = 30 + 25 - 10 = 45$.\nJumlah mahasiswa yang tidak menguasai keduanya:\n$\\text{Total} - |P \\cup C| = 50 - 45 = 5$ orang.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "70abe83e-046e-4d27-9de2-7708a8fb47da",
+    "topic": "Aturan Dasar Berhitung",
+    "question": "Berapa banyak string biner dengan panjang 8 yang dimulai dengan bit '1' atau diakhiri dengan bit '00'?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$160$"
+      },
+      {
+        "key": "B",
+        "text": "$176$"
+      },
+      {
+        "key": "C",
+        "text": "$192$"
+      },
+      {
+        "key": "D",
+        "text": "$128$"
+      },
+      {
+        "key": "E",
+        "text": "$200$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Total kemungkinan string biner panjang 8 adalah $2^8 = 256$.\n- Dimulai bit '1': $1 \\times 2^7 = 128$\n- Diakhiri bit '00': $2^6 \\times 1 = 64$\n- Dimulai '1' DAN diakhiri '00': $1 \\times 2^5 \\times 1 = 32$\nGunakan Inklusi-Eksklusi:\n$|A \\cup B| = |A| + |B| - |A \\cap B| = 128 + 64 - 32 = 160$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "bd622dfb-24ea-4e9d-8ac4-f1e6662e5b1a",
+    "topic": "Aturan Dasar Berhitung",
+    "question": "Berapakah banyaknya bilangan bulat antara 1 sampai 1000 (inklusif) yang habis dibagi oleh 7 atau habis dibagi oleh 11?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$220$"
+      },
+      {
+        "key": "B",
+        "text": "$232$"
+      },
+      {
+        "key": "C",
+        "text": "$233$"
+      },
+      {
+        "key": "D",
+        "text": "$221$"
+      },
+      {
+        "key": "E",
+        "text": "$245$"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Gunakan Prinsip Inklusi-Eksklusi:\n- Banyak bilangan habis dibagi 7: $\\lfloor 1000/7 \\rfloor = 142$\n- Banyak bilangan habis dibagi 11: $\\lfloor 1000/11 \\rfloor = 90$\n- Banyak bilangan habis dibagi KPK(7, 11) = 77: $\\lfloor 1000/77 \\rfloor = 12$\nMaka jumlahnya: $142 + 90 - 12 = 220$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "dd920cd8-bf2d-4907-a930-d592ff5e0329",
+    "topic": "Relasi Rekurensi",
+    "question": "Diberikan barisan Fibonacci yang didefinisikan dengan $F_0 = 0, F_1 = 1$, dan $F_n = F_{n-1} + F_{n-2}$ untuk $n \\ge 2$. Berapakah nilai dari $F_7$?",
+    "options": [
+      {
+        "key": "A",
+        "text": "$8$"
+      },
+      {
+        "key": "B",
+        "text": "$11$"
+      },
+      {
+        "key": "C",
+        "text": "$13$"
+      },
+      {
+        "key": "D",
+        "text": "$18$"
+      },
+      {
+        "key": "E",
+        "text": "$21$"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Hitung suku-suku barisan Fibonacci:\n$F_0 = 0$\n$F_1 = 1$\n$F_2 = 0 + 1 = 1$\n$F_3 = 1 + 1 = 2$\n$F_4 = 1 + 2 = 3$\n$F_5 = 2 + 3 = 5$\n$F_6 = 3 + 5 = 8$\n$F_7 = 5 + 8 = 13$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
+  },
+  {
+    "id": "770726d8-f9a8-4030-8b4f-4256c1e95a5c",
+    "topic": "Relasi Rekurensi",
+    "question": "Jika persamaan karakteristik dari suatu relasi rekurensi homogen memiliki akar kembar $r_1 = r_2 = 3$, maka bentuk solusi umum $a_n$ adalah:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a_n = c_1 3^n + c_2 3^n$"
+      },
+      {
+        "key": "B",
+        "text": "$a_n = c_1 3^n + c_2 n 3^n$"
+      },
+      {
+        "key": "C",
+        "text": "$a_n = c_1 3^n + c_2 n^2 3^n$"
+      },
+      {
+        "key": "D",
+        "text": "$a_n = (c_1 + c_2)^n 3^n$"
+      },
+      {
+        "key": "E",
+        "text": "$a_n = c_1 3^n + c_2 (-3)^n$"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Menurut teorema relasi rekurensi linier homogen berderajat 2 dengan akar karakteristik kembar $r_1 = r_2 = r$: solusi umum berbentuk kombinasi linier $a_n = c_1 r^n + c_2 n r^n$. Untuk $r = 3$, diperoleh $a_n = (c_1 + c_2 n) 3^n$.",
+    "created_at": "2026-10-30T08:56:45.689863+00:00"
   }
 ];
